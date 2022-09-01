@@ -1,38 +1,47 @@
-# create-svelte
+<p align="center">
+  <a href="https://heroicons.com/#gh-light-mode-only" target="_blank">
+    <img src="https://raw.githubusercontent.com/tailwindlabs/heroicons/master/.github/logo-light.svg" alt="Heroicons" width="300">
+  </a>
+  <a href="https://heroicons.com/#gh-dark-mode-only" target="_blank">
+    <img src="https://raw.githubusercontent.com/tailwindlabs/heroicons/master/.github/logo-dark.svg" alt="Heroicons" width="300">
+  </a>
+</p>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+<p align="center">
+  Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS. <br>Available as Svelte library.
+<p>
 
-## Creating a project
+<p align="center">
+  <a href="https://heroicons.com"><strong>Browse at Heroicons.com &rarr;</strong></a>
+</p>
 
-If you're seeing this, you've probably already done this step. Congrats!
+<p align="center">
+    <a href="https://github.com/matschik/heroiconsvelte/releases"><img src="https://img.shields.io/npm/v/heroiconsvelte" alt="Latest Release"></a>
+    <a href="https://github.com/matschik/heroiconsvelte/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/heroiconsvelte.svg" alt="License"></a>
+</p>
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Usage
 
-# create a new project in my-app
-npm create svelte@latest my-app
+First, install `heroiconsvelte` from npm:
+
+```sh
+npm install heroiconsvelte
 ```
 
-## Developing
+Now each icon can be imported individually as a React component:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```js
+import { BeakerIcon } from 'heroiconsvelte/24/solid';
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+<BeakerIcon class="h-6 w-6 text-blue-500" />;
 ```
 
-## Building
+The 24x24 outline icons can be imported from `heroiconsvelte/24/outline`, the 24x24 solid icons can be imported from `heroiconsvelte/24/solid`, and the 20x20 solid icons can be imported from `heroiconsvelte/20/solid`.
 
-To create a production version of your app:
+Icons use an upper camel case naming convention and are always suffixed with the word `Icon`.
 
-```bash
-npm run build
-```
+[Browse the full list of icon names on UNPKG &rarr;](https://unpkg.com/browse/heroiconsvelte/24/outline/)
 
-You can preview the production build with `npm run preview`.
+## License
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+This library is MIT licensed.
