@@ -30,10 +30,12 @@ npm install heroiconsvelte
 
 Now each icon can be imported individually as a React component:
 
-```js
-import { BeakerIcon } from 'heroiconsvelte/24/solid';
+```svelte
+<script>
+	import { BeakerIcon } from 'heroiconsvelte/24/solid';
+</script>
 
-<BeakerIcon class="h-6 w-6 text-blue-500" />;
+<BeakerIcon class="h-6 w-6 text-blue-500" />
 ```
 
 The 24x24 outline icons can be imported from `heroiconsvelte/24/outline`, the 24x24 solid icons can be imported from `heroiconsvelte/24/solid`, and the 20x20 solid icons can be imported from `heroiconsvelte/20/solid`.
