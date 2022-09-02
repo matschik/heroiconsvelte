@@ -1,10 +1,10 @@
 {
 	"name": "heroiconsvelte",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "./build.js && svelte-kit sync && svelte-package",
-		"pkg:publish": "cd package && pnpm publish",
+		"pkg:publish": "pnpm publish ./package",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -35,5 +35,10 @@
 	"dependencies": {
 		"@heroicons/vue": "^2.0.10",
 		"heroicons": "github:tailwindlabs/heroicons#master"
-	}
+	},
+	"svelte": [
+		"./20/solid/index.js",
+		"./24/solid/index.js",
+		"./24/outline/index.js"
+	]
 }

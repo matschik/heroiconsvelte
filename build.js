@@ -11,6 +11,10 @@ await fs.ensureDir(targetDir);
 await fs.remove(targetDir);
 await fs.ensureDir(targetDir);
 
+const pkgJson = await fs.readJson('package.json');
+
+pkgJson.svelte = [];
+
 for (const svgIconPath of svgIconPaths) {
 	let svgIconContent = await fs.readFile(svgIconPath, 'utf8');
 	svgIconContent = svgIconContent.replace('<svg ', `<svg {...$$$$props} `);
@@ -31,4 +35,11 @@ for (const svgIconPath of svgIconPaths) {
 	)}Icon } from './${componentFilename}';\n`;
 	await fs.ensureFile(indexFilePath);
 	await fs.appendFile(indexFilePath, indexFileContent);
+
+	const indexPathFromSrc = `.${srcPath}/index.js`;
+	if (!pkgJson.svelte.includes(indexPathFromSrc)) {
+		pkgJson.svelte.push(indexPathFromSrc);
+	}
 }
+
+await fs.writeFile('package.json', JSON.stringify(pkgJson, null, '\t'));
