@@ -1,7 +1,7 @@
 #!/usr/bin/env zx
 import pascalcase from 'pascalcase';
 
-const BASE_DIR = 'node_modules/heroicons/src';
+const BASE_DIR = 'node_modules/heroicons/optimized';
 
 const svgIconPaths = await glob([`${BASE_DIR}/**/*.svg`]);
 
