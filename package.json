@@ -38,7 +38,7 @@
 	},
 	"svelte": [
 		"./20/solid/index.js",
-		"./24/solid/index.js",
-		"./24/outline/index.js"
+		"./24/outline/index.js",
+		"./24/solid/index.js"
 	]
 }
