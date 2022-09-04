@@ -1,10 +1,10 @@
 {
 	"name": "heroiconsvelte",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "./build.js && svelte-kit sync && svelte-package",
-		"publish": "pnpm publish ./package",
+		"pkg:publish": "pnpm publish ./package",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
