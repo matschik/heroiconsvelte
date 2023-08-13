@@ -39,11 +39,13 @@ for (const svgIconPath of svgIconPaths) {
 	await fsx.appendFile(indexFilePath, indexFileContent);
 
 	const indexPathFromSrc = `.${srcPath}/index.js`;
-
-	pkgJson.exports[indexPathFromSrc] = {
+	const indexjsExport = {
 		types: `./dist${srcPath}/index.d.ts`,
 		svelte: `./dist${srcPath}/index.js`
 	};
+
+	pkgJson.exports[indexPathFromSrc] = indexjsExport;
+	pkgJson.exports[`.${srcPath}`] = indexjsExport;
 
 	const exportKey = `.${srcPath}/${componentFilename}`;
 	const sveltePath = `./dist${srcPath}/${componentFilename}`;
