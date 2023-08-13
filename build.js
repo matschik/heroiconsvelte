@@ -1,5 +1,7 @@
-#!/usr/bin/env zx
 import pascalcase from 'pascalcase';
+import fsx from 'fs-extra';
+import { globby as glob } from 'globby';
+import path from 'path';
 
 const BASE_DIR = 'node_modules/heroicons/optimized';
 
@@ -7,16 +9,16 @@ const svgIconPaths = await glob([`${BASE_DIR}/**/*.svg`]);
 
 const targetDir = 'src/lib';
 
-await fs.ensureDir(targetDir);
-await fs.remove(targetDir);
-await fs.ensureDir(targetDir);
+await fsx.ensureDir(targetDir);
+await fsx.remove(targetDir);
+await fsx.ensureDir(targetDir);
 
-const pkgJson = await fs.readJson('package.json');
+const pkgJson = await fsx.readJson('package.json');
 
-pkgJson.svelte = [];
+pkgJson.exports = {};
 
 for (const svgIconPath of svgIconPaths) {
-	let svgIconContent = await fs.readFile(svgIconPath, 'utf8');
+	let svgIconContent = await fsx.readFile(svgIconPath, 'utf8');
 	svgIconContent = svgIconContent.replace('<svg ', `<svg {...$$$$props} `);
 
 	const parsedPath = path.parse(svgIconPath);
@@ -26,20 +28,30 @@ for (const svgIconPath of svgIconPaths) {
 	const componentFilename = `${componentName}.svelte`;
 	const filePath = path.join(dirPath, componentFilename);
 
-	await fs.ensureDir(dirPath);
-	await fs.writeFile(filePath, svgIconContent);
+	await fsx.ensureDir(dirPath);
+	await fsx.writeFile(filePath, svgIconContent);
 
 	const indexFilePath = path.join(dirPath, 'index.js');
 	const indexFileContent = `export { default as ${pascalcase(
 		parsedPath.name
 	)}Icon } from './${componentFilename}';\n`;
-	await fs.ensureFile(indexFilePath);
-	await fs.appendFile(indexFilePath, indexFileContent);
+	await fsx.ensureFile(indexFilePath);
+	await fsx.appendFile(indexFilePath, indexFileContent);
 
 	const indexPathFromSrc = `.${srcPath}/index.js`;
-	if (!pkgJson.svelte.includes(indexPathFromSrc)) {
-		pkgJson.svelte.push(indexPathFromSrc);
-	}
+
+	pkgJson.exports[indexPathFromSrc] = {
+		types: `./dist${srcPath}/index.d.ts`,
+		svelte: `./dist${srcPath}/index.js`
+	};
+
+	const exportKey = `.${srcPath}/${componentFilename}`;
+	const sveltePath = `./dist${srcPath}/${componentFilename}`;
+	const typesPaths = sveltePath + '.d.ts';
+	pkgJson.exports[exportKey] = {
+		types: typesPaths,
+		svelte: sveltePath
+	};
 }
 
-await fs.writeFile('package.json', JSON.stringify(pkgJson, null, '\t'));
+await fsx.writeFile('package.json', JSON.stringify(pkgJson, null, '\t'));

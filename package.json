@@ -1,9 +1,9 @@
 {
 	"name": "heroiconsvelte",
-	"version": "0.1.5",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "./build.js && svelte-kit sync && svelte-package",
+		"build": "node build.js && svelte-kit sync && svelte-package",
 		"pkg:publish": "pnpm publish ./package",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -12,32 +12,3550 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.25.1",
-		"@sveltejs/adapter-auto": "1.0.0-next.71",
-		"@sveltejs/kit": "1.0.0-next.469",
-		"@sveltejs/package": "1.0.0-next.3",
-		"@typescript-eslint/eslint-plugin": "^5.36.1",
-		"@typescript-eslint/parser": "^5.36.1",
-		"eslint": "^8.23.0",
-		"eslint-config-prettier": "^8.5.0",
+		"@playwright/test": "^1.37.0",
+		"@sveltejs/adapter-auto": "2.1.0",
+		"@sveltejs/kit": "1.22.5",
+		"@sveltejs/package": "2.2.1",
+		"@typescript-eslint/eslint-plugin": "^6.3.0",
+		"@typescript-eslint/parser": "^6.3.0",
+		"eslint": "^8.47.0",
+		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"fs-extra": "^11.1.1",
+		"globby": "^13.2.2",
 		"pascalcase": "^2.0.0",
-		"prettier": "^2.7.1",
-		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.50.0",
-		"svelte-check": "^2.9.0",
-		"svelte-preprocess": "^4.10.7",
-		"tslib": "^2.4.0",
-		"typescript": "^4.8.2",
-		"vite": "^3.0.9"
+		"prettier": "^3.0.1",
+		"prettier-plugin-svelte": "^3.0.3",
+		"svelte": "^4.2.0",
+		"svelte-check": "^3.5.0",
+		"svelte-preprocess": "^5.0.4",
+		"tslib": "^2.6.1",
+		"typescript": "^5.1.6",
+		"vite": "^4.4.9"
 	},
 	"type": "module",
 	"dependencies": {
 		"heroicons": "github:tailwindlabs/heroicons#master"
 	},
-	"svelte": [
-		"./20/solid/index.js",
-		"./24/outline/index.js",
-		"./24/solid/index.js"
-	]
+	"peerDependencies": {
+		"svelte": ">=3"
+	},
+	"exports": {
+		"./20/solid/index.js": {
+			"types": "./dist/20/solid/index.d.ts",
+			"svelte": "./dist/20/solid/index.js"
+		},
+		"./20/solid/AcademicCapIcon.svelte": {
+			"types": "./dist/20/solid/AcademicCapIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/AcademicCapIcon.svelte"
+		},
+		"./20/solid/AdjustmentsHorizontalIcon.svelte": {
+			"types": "./dist/20/solid/AdjustmentsHorizontalIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/AdjustmentsHorizontalIcon.svelte"
+		},
+		"./20/solid/AdjustmentsVerticalIcon.svelte": {
+			"types": "./dist/20/solid/AdjustmentsVerticalIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/AdjustmentsVerticalIcon.svelte"
+		},
+		"./20/solid/ArchiveBoxArrowDownIcon.svelte": {
+			"types": "./dist/20/solid/ArchiveBoxArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArchiveBoxArrowDownIcon.svelte"
+		},
+		"./20/solid/ArchiveBoxXMarkIcon.svelte": {
+			"types": "./dist/20/solid/ArchiveBoxXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArchiveBoxXMarkIcon.svelte"
+		},
+		"./20/solid/ArchiveBoxIcon.svelte": {
+			"types": "./dist/20/solid/ArchiveBoxIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArchiveBoxIcon.svelte"
+		},
+		"./20/solid/ArrowDownCircleIcon.svelte": {
+			"types": "./dist/20/solid/ArrowDownCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowDownCircleIcon.svelte"
+		},
+		"./20/solid/ArrowDownLeftIcon.svelte": {
+			"types": "./dist/20/solid/ArrowDownLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowDownLeftIcon.svelte"
+		},
+		"./20/solid/ArrowDownOnSquareStackIcon.svelte": {
+			"types": "./dist/20/solid/ArrowDownOnSquareStackIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowDownOnSquareStackIcon.svelte"
+		},
+		"./20/solid/ArrowDownOnSquareIcon.svelte": {
+			"types": "./dist/20/solid/ArrowDownOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowDownOnSquareIcon.svelte"
+		},
+		"./20/solid/ArrowDownRightIcon.svelte": {
+			"types": "./dist/20/solid/ArrowDownRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowDownRightIcon.svelte"
+		},
+		"./20/solid/ArrowDownTrayIcon.svelte": {
+			"types": "./dist/20/solid/ArrowDownTrayIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowDownTrayIcon.svelte"
+		},
+		"./20/solid/ArrowDownIcon.svelte": {
+			"types": "./dist/20/solid/ArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowDownIcon.svelte"
+		},
+		"./20/solid/ArrowLeftCircleIcon.svelte": {
+			"types": "./dist/20/solid/ArrowLeftCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowLeftCircleIcon.svelte"
+		},
+		"./20/solid/ArrowLeftOnRectangleIcon.svelte": {
+			"types": "./dist/20/solid/ArrowLeftOnRectangleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowLeftOnRectangleIcon.svelte"
+		},
+		"./20/solid/ArrowLeftIcon.svelte": {
+			"types": "./dist/20/solid/ArrowLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowLeftIcon.svelte"
+		},
+		"./20/solid/ArrowLongDownIcon.svelte": {
+			"types": "./dist/20/solid/ArrowLongDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowLongDownIcon.svelte"
+		},
+		"./20/solid/ArrowLongLeftIcon.svelte": {
+			"types": "./dist/20/solid/ArrowLongLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowLongLeftIcon.svelte"
+		},
+		"./20/solid/ArrowLongRightIcon.svelte": {
+			"types": "./dist/20/solid/ArrowLongRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowLongRightIcon.svelte"
+		},
+		"./20/solid/ArrowLongUpIcon.svelte": {
+			"types": "./dist/20/solid/ArrowLongUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowLongUpIcon.svelte"
+		},
+		"./20/solid/ArrowPathRoundedSquareIcon.svelte": {
+			"types": "./dist/20/solid/ArrowPathRoundedSquareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowPathRoundedSquareIcon.svelte"
+		},
+		"./20/solid/ArrowPathIcon.svelte": {
+			"types": "./dist/20/solid/ArrowPathIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowPathIcon.svelte"
+		},
+		"./20/solid/ArrowRightCircleIcon.svelte": {
+			"types": "./dist/20/solid/ArrowRightCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowRightCircleIcon.svelte"
+		},
+		"./20/solid/ArrowRightOnRectangleIcon.svelte": {
+			"types": "./dist/20/solid/ArrowRightOnRectangleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowRightOnRectangleIcon.svelte"
+		},
+		"./20/solid/ArrowRightIcon.svelte": {
+			"types": "./dist/20/solid/ArrowRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowRightIcon.svelte"
+		},
+		"./20/solid/ArrowSmallDownIcon.svelte": {
+			"types": "./dist/20/solid/ArrowSmallDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowSmallDownIcon.svelte"
+		},
+		"./20/solid/ArrowSmallLeftIcon.svelte": {
+			"types": "./dist/20/solid/ArrowSmallLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowSmallLeftIcon.svelte"
+		},
+		"./20/solid/ArrowSmallRightIcon.svelte": {
+			"types": "./dist/20/solid/ArrowSmallRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowSmallRightIcon.svelte"
+		},
+		"./20/solid/ArrowSmallUpIcon.svelte": {
+			"types": "./dist/20/solid/ArrowSmallUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowSmallUpIcon.svelte"
+		},
+		"./20/solid/ArrowTopRightOnSquareIcon.svelte": {
+			"types": "./dist/20/solid/ArrowTopRightOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowTopRightOnSquareIcon.svelte"
+		},
+		"./20/solid/ArrowTrendingDownIcon.svelte": {
+			"types": "./dist/20/solid/ArrowTrendingDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowTrendingDownIcon.svelte"
+		},
+		"./20/solid/ArrowTrendingUpIcon.svelte": {
+			"types": "./dist/20/solid/ArrowTrendingUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowTrendingUpIcon.svelte"
+		},
+		"./20/solid/ArrowUpCircleIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUpCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUpCircleIcon.svelte"
+		},
+		"./20/solid/ArrowUpLeftIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUpLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUpLeftIcon.svelte"
+		},
+		"./20/solid/ArrowUpOnSquareStackIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUpOnSquareStackIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUpOnSquareStackIcon.svelte"
+		},
+		"./20/solid/ArrowUpOnSquareIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUpOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUpOnSquareIcon.svelte"
+		},
+		"./20/solid/ArrowUpRightIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUpRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUpRightIcon.svelte"
+		},
+		"./20/solid/ArrowUpTrayIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUpTrayIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUpTrayIcon.svelte"
+		},
+		"./20/solid/ArrowUpIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUpIcon.svelte"
+		},
+		"./20/solid/ArrowUturnDownIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUturnDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUturnDownIcon.svelte"
+		},
+		"./20/solid/ArrowUturnLeftIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUturnLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUturnLeftIcon.svelte"
+		},
+		"./20/solid/ArrowUturnRightIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUturnRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUturnRightIcon.svelte"
+		},
+		"./20/solid/ArrowUturnUpIcon.svelte": {
+			"types": "./dist/20/solid/ArrowUturnUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowUturnUpIcon.svelte"
+		},
+		"./20/solid/ArrowsPointingInIcon.svelte": {
+			"types": "./dist/20/solid/ArrowsPointingInIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowsPointingInIcon.svelte"
+		},
+		"./20/solid/ArrowsPointingOutIcon.svelte": {
+			"types": "./dist/20/solid/ArrowsPointingOutIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowsPointingOutIcon.svelte"
+		},
+		"./20/solid/ArrowsRightLeftIcon.svelte": {
+			"types": "./dist/20/solid/ArrowsRightLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowsRightLeftIcon.svelte"
+		},
+		"./20/solid/ArrowsUpDownIcon.svelte": {
+			"types": "./dist/20/solid/ArrowsUpDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ArrowsUpDownIcon.svelte"
+		},
+		"./20/solid/AtSymbolIcon.svelte": {
+			"types": "./dist/20/solid/AtSymbolIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/AtSymbolIcon.svelte"
+		},
+		"./20/solid/BackspaceIcon.svelte": {
+			"types": "./dist/20/solid/BackspaceIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BackspaceIcon.svelte"
+		},
+		"./20/solid/BackwardIcon.svelte": {
+			"types": "./dist/20/solid/BackwardIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BackwardIcon.svelte"
+		},
+		"./20/solid/BanknotesIcon.svelte": {
+			"types": "./dist/20/solid/BanknotesIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BanknotesIcon.svelte"
+		},
+		"./20/solid/Bars2Icon.svelte": {
+			"types": "./dist/20/solid/Bars2Icon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Bars2Icon.svelte"
+		},
+		"./20/solid/Bars3BottomLeftIcon.svelte": {
+			"types": "./dist/20/solid/Bars3BottomLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Bars3BottomLeftIcon.svelte"
+		},
+		"./20/solid/Bars3BottomRightIcon.svelte": {
+			"types": "./dist/20/solid/Bars3BottomRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Bars3BottomRightIcon.svelte"
+		},
+		"./20/solid/Bars3CenterLeftIcon.svelte": {
+			"types": "./dist/20/solid/Bars3CenterLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Bars3CenterLeftIcon.svelte"
+		},
+		"./20/solid/Bars3Icon.svelte": {
+			"types": "./dist/20/solid/Bars3Icon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Bars3Icon.svelte"
+		},
+		"./20/solid/Bars4Icon.svelte": {
+			"types": "./dist/20/solid/Bars4Icon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Bars4Icon.svelte"
+		},
+		"./20/solid/BarsArrowDownIcon.svelte": {
+			"types": "./dist/20/solid/BarsArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BarsArrowDownIcon.svelte"
+		},
+		"./20/solid/BarsArrowUpIcon.svelte": {
+			"types": "./dist/20/solid/BarsArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BarsArrowUpIcon.svelte"
+		},
+		"./20/solid/Battery0Icon.svelte": {
+			"types": "./dist/20/solid/Battery0Icon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Battery0Icon.svelte"
+		},
+		"./20/solid/Battery100Icon.svelte": {
+			"types": "./dist/20/solid/Battery100Icon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Battery100Icon.svelte"
+		},
+		"./20/solid/Battery50Icon.svelte": {
+			"types": "./dist/20/solid/Battery50Icon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Battery50Icon.svelte"
+		},
+		"./20/solid/BeakerIcon.svelte": {
+			"types": "./dist/20/solid/BeakerIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BeakerIcon.svelte"
+		},
+		"./20/solid/BellAlertIcon.svelte": {
+			"types": "./dist/20/solid/BellAlertIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BellAlertIcon.svelte"
+		},
+		"./20/solid/BellSlashIcon.svelte": {
+			"types": "./dist/20/solid/BellSlashIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BellSlashIcon.svelte"
+		},
+		"./20/solid/BellSnoozeIcon.svelte": {
+			"types": "./dist/20/solid/BellSnoozeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BellSnoozeIcon.svelte"
+		},
+		"./20/solid/BellIcon.svelte": {
+			"types": "./dist/20/solid/BellIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BellIcon.svelte"
+		},
+		"./20/solid/BoltSlashIcon.svelte": {
+			"types": "./dist/20/solid/BoltSlashIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BoltSlashIcon.svelte"
+		},
+		"./20/solid/BoltIcon.svelte": {
+			"types": "./dist/20/solid/BoltIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BoltIcon.svelte"
+		},
+		"./20/solid/BookOpenIcon.svelte": {
+			"types": "./dist/20/solid/BookOpenIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BookOpenIcon.svelte"
+		},
+		"./20/solid/BookmarkSlashIcon.svelte": {
+			"types": "./dist/20/solid/BookmarkSlashIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BookmarkSlashIcon.svelte"
+		},
+		"./20/solid/BookmarkSquareIcon.svelte": {
+			"types": "./dist/20/solid/BookmarkSquareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BookmarkSquareIcon.svelte"
+		},
+		"./20/solid/BookmarkIcon.svelte": {
+			"types": "./dist/20/solid/BookmarkIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BookmarkIcon.svelte"
+		},
+		"./20/solid/BriefcaseIcon.svelte": {
+			"types": "./dist/20/solid/BriefcaseIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BriefcaseIcon.svelte"
+		},
+		"./20/solid/BugAntIcon.svelte": {
+			"types": "./dist/20/solid/BugAntIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BugAntIcon.svelte"
+		},
+		"./20/solid/BuildingLibraryIcon.svelte": {
+			"types": "./dist/20/solid/BuildingLibraryIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BuildingLibraryIcon.svelte"
+		},
+		"./20/solid/BuildingOffice2Icon.svelte": {
+			"types": "./dist/20/solid/BuildingOffice2Icon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BuildingOffice2Icon.svelte"
+		},
+		"./20/solid/BuildingOfficeIcon.svelte": {
+			"types": "./dist/20/solid/BuildingOfficeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BuildingOfficeIcon.svelte"
+		},
+		"./20/solid/BuildingStorefrontIcon.svelte": {
+			"types": "./dist/20/solid/BuildingStorefrontIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/BuildingStorefrontIcon.svelte"
+		},
+		"./20/solid/CakeIcon.svelte": {
+			"types": "./dist/20/solid/CakeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CakeIcon.svelte"
+		},
+		"./20/solid/CalculatorIcon.svelte": {
+			"types": "./dist/20/solid/CalculatorIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CalculatorIcon.svelte"
+		},
+		"./20/solid/CalendarDaysIcon.svelte": {
+			"types": "./dist/20/solid/CalendarDaysIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CalendarDaysIcon.svelte"
+		},
+		"./20/solid/CalendarIcon.svelte": {
+			"types": "./dist/20/solid/CalendarIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CalendarIcon.svelte"
+		},
+		"./20/solid/CameraIcon.svelte": {
+			"types": "./dist/20/solid/CameraIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CameraIcon.svelte"
+		},
+		"./20/solid/ChartBarSquareIcon.svelte": {
+			"types": "./dist/20/solid/ChartBarSquareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChartBarSquareIcon.svelte"
+		},
+		"./20/solid/ChartBarIcon.svelte": {
+			"types": "./dist/20/solid/ChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChartBarIcon.svelte"
+		},
+		"./20/solid/ChartPieIcon.svelte": {
+			"types": "./dist/20/solid/ChartPieIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChartPieIcon.svelte"
+		},
+		"./20/solid/ChatBubbleBottomCenterTextIcon.svelte": {
+			"types": "./dist/20/solid/ChatBubbleBottomCenterTextIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChatBubbleBottomCenterTextIcon.svelte"
+		},
+		"./20/solid/ChatBubbleBottomCenterIcon.svelte": {
+			"types": "./dist/20/solid/ChatBubbleBottomCenterIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChatBubbleBottomCenterIcon.svelte"
+		},
+		"./20/solid/ChatBubbleLeftEllipsisIcon.svelte": {
+			"types": "./dist/20/solid/ChatBubbleLeftEllipsisIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChatBubbleLeftEllipsisIcon.svelte"
+		},
+		"./20/solid/ChatBubbleLeftRightIcon.svelte": {
+			"types": "./dist/20/solid/ChatBubbleLeftRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChatBubbleLeftRightIcon.svelte"
+		},
+		"./20/solid/ChatBubbleLeftIcon.svelte": {
+			"types": "./dist/20/solid/ChatBubbleLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChatBubbleLeftIcon.svelte"
+		},
+		"./20/solid/ChatBubbleOvalLeftEllipsisIcon.svelte": {
+			"types": "./dist/20/solid/ChatBubbleOvalLeftEllipsisIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChatBubbleOvalLeftEllipsisIcon.svelte"
+		},
+		"./20/solid/ChatBubbleOvalLeftIcon.svelte": {
+			"types": "./dist/20/solid/ChatBubbleOvalLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChatBubbleOvalLeftIcon.svelte"
+		},
+		"./20/solid/CheckBadgeIcon.svelte": {
+			"types": "./dist/20/solid/CheckBadgeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CheckBadgeIcon.svelte"
+		},
+		"./20/solid/CheckCircleIcon.svelte": {
+			"types": "./dist/20/solid/CheckCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CheckCircleIcon.svelte"
+		},
+		"./20/solid/CheckIcon.svelte": {
+			"types": "./dist/20/solid/CheckIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CheckIcon.svelte"
+		},
+		"./20/solid/ChevronDoubleDownIcon.svelte": {
+			"types": "./dist/20/solid/ChevronDoubleDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronDoubleDownIcon.svelte"
+		},
+		"./20/solid/ChevronDoubleLeftIcon.svelte": {
+			"types": "./dist/20/solid/ChevronDoubleLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronDoubleLeftIcon.svelte"
+		},
+		"./20/solid/ChevronDoubleRightIcon.svelte": {
+			"types": "./dist/20/solid/ChevronDoubleRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronDoubleRightIcon.svelte"
+		},
+		"./20/solid/ChevronDoubleUpIcon.svelte": {
+			"types": "./dist/20/solid/ChevronDoubleUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronDoubleUpIcon.svelte"
+		},
+		"./20/solid/ChevronDownIcon.svelte": {
+			"types": "./dist/20/solid/ChevronDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronDownIcon.svelte"
+		},
+		"./20/solid/ChevronLeftIcon.svelte": {
+			"types": "./dist/20/solid/ChevronLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronLeftIcon.svelte"
+		},
+		"./20/solid/ChevronRightIcon.svelte": {
+			"types": "./dist/20/solid/ChevronRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronRightIcon.svelte"
+		},
+		"./20/solid/ChevronUpDownIcon.svelte": {
+			"types": "./dist/20/solid/ChevronUpDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronUpDownIcon.svelte"
+		},
+		"./20/solid/ChevronUpIcon.svelte": {
+			"types": "./dist/20/solid/ChevronUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ChevronUpIcon.svelte"
+		},
+		"./20/solid/CircleStackIcon.svelte": {
+			"types": "./dist/20/solid/CircleStackIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CircleStackIcon.svelte"
+		},
+		"./20/solid/ClipboardDocumentCheckIcon.svelte": {
+			"types": "./dist/20/solid/ClipboardDocumentCheckIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ClipboardDocumentCheckIcon.svelte"
+		},
+		"./20/solid/ClipboardDocumentListIcon.svelte": {
+			"types": "./dist/20/solid/ClipboardDocumentListIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ClipboardDocumentListIcon.svelte"
+		},
+		"./20/solid/ClipboardDocumentIcon.svelte": {
+			"types": "./dist/20/solid/ClipboardDocumentIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ClipboardDocumentIcon.svelte"
+		},
+		"./20/solid/ClipboardIcon.svelte": {
+			"types": "./dist/20/solid/ClipboardIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ClipboardIcon.svelte"
+		},
+		"./20/solid/ClockIcon.svelte": {
+			"types": "./dist/20/solid/ClockIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ClockIcon.svelte"
+		},
+		"./20/solid/CloudArrowDownIcon.svelte": {
+			"types": "./dist/20/solid/CloudArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CloudArrowDownIcon.svelte"
+		},
+		"./20/solid/CloudArrowUpIcon.svelte": {
+			"types": "./dist/20/solid/CloudArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CloudArrowUpIcon.svelte"
+		},
+		"./20/solid/CloudIcon.svelte": {
+			"types": "./dist/20/solid/CloudIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CloudIcon.svelte"
+		},
+		"./20/solid/CodeBracketSquareIcon.svelte": {
+			"types": "./dist/20/solid/CodeBracketSquareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CodeBracketSquareIcon.svelte"
+		},
+		"./20/solid/CodeBracketIcon.svelte": {
+			"types": "./dist/20/solid/CodeBracketIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CodeBracketIcon.svelte"
+		},
+		"./20/solid/Cog6ToothIcon.svelte": {
+			"types": "./dist/20/solid/Cog6ToothIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Cog6ToothIcon.svelte"
+		},
+		"./20/solid/Cog8ToothIcon.svelte": {
+			"types": "./dist/20/solid/Cog8ToothIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Cog8ToothIcon.svelte"
+		},
+		"./20/solid/CogIcon.svelte": {
+			"types": "./dist/20/solid/CogIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CogIcon.svelte"
+		},
+		"./20/solid/CommandLineIcon.svelte": {
+			"types": "./dist/20/solid/CommandLineIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CommandLineIcon.svelte"
+		},
+		"./20/solid/ComputerDesktopIcon.svelte": {
+			"types": "./dist/20/solid/ComputerDesktopIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ComputerDesktopIcon.svelte"
+		},
+		"./20/solid/CpuChipIcon.svelte": {
+			"types": "./dist/20/solid/CpuChipIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CpuChipIcon.svelte"
+		},
+		"./20/solid/CreditCardIcon.svelte": {
+			"types": "./dist/20/solid/CreditCardIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CreditCardIcon.svelte"
+		},
+		"./20/solid/CubeTransparentIcon.svelte": {
+			"types": "./dist/20/solid/CubeTransparentIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CubeTransparentIcon.svelte"
+		},
+		"./20/solid/CubeIcon.svelte": {
+			"types": "./dist/20/solid/CubeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CubeIcon.svelte"
+		},
+		"./20/solid/CurrencyBangladeshiIcon.svelte": {
+			"types": "./dist/20/solid/CurrencyBangladeshiIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CurrencyBangladeshiIcon.svelte"
+		},
+		"./20/solid/CurrencyDollarIcon.svelte": {
+			"types": "./dist/20/solid/CurrencyDollarIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CurrencyDollarIcon.svelte"
+		},
+		"./20/solid/CurrencyEuroIcon.svelte": {
+			"types": "./dist/20/solid/CurrencyEuroIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CurrencyEuroIcon.svelte"
+		},
+		"./20/solid/CurrencyPoundIcon.svelte": {
+			"types": "./dist/20/solid/CurrencyPoundIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CurrencyPoundIcon.svelte"
+		},
+		"./20/solid/CurrencyRupeeIcon.svelte": {
+			"types": "./dist/20/solid/CurrencyRupeeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CurrencyRupeeIcon.svelte"
+		},
+		"./20/solid/CurrencyYenIcon.svelte": {
+			"types": "./dist/20/solid/CurrencyYenIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CurrencyYenIcon.svelte"
+		},
+		"./20/solid/CursorArrowRaysIcon.svelte": {
+			"types": "./dist/20/solid/CursorArrowRaysIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CursorArrowRaysIcon.svelte"
+		},
+		"./20/solid/CursorArrowRippleIcon.svelte": {
+			"types": "./dist/20/solid/CursorArrowRippleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/CursorArrowRippleIcon.svelte"
+		},
+		"./20/solid/DevicePhoneMobileIcon.svelte": {
+			"types": "./dist/20/solid/DevicePhoneMobileIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DevicePhoneMobileIcon.svelte"
+		},
+		"./20/solid/DeviceTabletIcon.svelte": {
+			"types": "./dist/20/solid/DeviceTabletIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DeviceTabletIcon.svelte"
+		},
+		"./20/solid/DocumentArrowDownIcon.svelte": {
+			"types": "./dist/20/solid/DocumentArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentArrowDownIcon.svelte"
+		},
+		"./20/solid/DocumentArrowUpIcon.svelte": {
+			"types": "./dist/20/solid/DocumentArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentArrowUpIcon.svelte"
+		},
+		"./20/solid/DocumentChartBarIcon.svelte": {
+			"types": "./dist/20/solid/DocumentChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentChartBarIcon.svelte"
+		},
+		"./20/solid/DocumentCheckIcon.svelte": {
+			"types": "./dist/20/solid/DocumentCheckIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentCheckIcon.svelte"
+		},
+		"./20/solid/DocumentDuplicateIcon.svelte": {
+			"types": "./dist/20/solid/DocumentDuplicateIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentDuplicateIcon.svelte"
+		},
+		"./20/solid/DocumentMagnifyingGlassIcon.svelte": {
+			"types": "./dist/20/solid/DocumentMagnifyingGlassIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentMagnifyingGlassIcon.svelte"
+		},
+		"./20/solid/DocumentMinusIcon.svelte": {
+			"types": "./dist/20/solid/DocumentMinusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentMinusIcon.svelte"
+		},
+		"./20/solid/DocumentPlusIcon.svelte": {
+			"types": "./dist/20/solid/DocumentPlusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentPlusIcon.svelte"
+		},
+		"./20/solid/DocumentTextIcon.svelte": {
+			"types": "./dist/20/solid/DocumentTextIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentTextIcon.svelte"
+		},
+		"./20/solid/DocumentIcon.svelte": {
+			"types": "./dist/20/solid/DocumentIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/DocumentIcon.svelte"
+		},
+		"./20/solid/EllipsisHorizontalCircleIcon.svelte": {
+			"types": "./dist/20/solid/EllipsisHorizontalCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/EllipsisHorizontalCircleIcon.svelte"
+		},
+		"./20/solid/EllipsisHorizontalIcon.svelte": {
+			"types": "./dist/20/solid/EllipsisHorizontalIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/EllipsisHorizontalIcon.svelte"
+		},
+		"./20/solid/EllipsisVerticalIcon.svelte": {
+			"types": "./dist/20/solid/EllipsisVerticalIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/EllipsisVerticalIcon.svelte"
+		},
+		"./20/solid/EnvelopeOpenIcon.svelte": {
+			"types": "./dist/20/solid/EnvelopeOpenIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/EnvelopeOpenIcon.svelte"
+		},
+		"./20/solid/EnvelopeIcon.svelte": {
+			"types": "./dist/20/solid/EnvelopeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/EnvelopeIcon.svelte"
+		},
+		"./20/solid/ExclamationCircleIcon.svelte": {
+			"types": "./dist/20/solid/ExclamationCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ExclamationCircleIcon.svelte"
+		},
+		"./20/solid/ExclamationTriangleIcon.svelte": {
+			"types": "./dist/20/solid/ExclamationTriangleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ExclamationTriangleIcon.svelte"
+		},
+		"./20/solid/EyeDropperIcon.svelte": {
+			"types": "./dist/20/solid/EyeDropperIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/EyeDropperIcon.svelte"
+		},
+		"./20/solid/EyeSlashIcon.svelte": {
+			"types": "./dist/20/solid/EyeSlashIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/EyeSlashIcon.svelte"
+		},
+		"./20/solid/EyeIcon.svelte": {
+			"types": "./dist/20/solid/EyeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/EyeIcon.svelte"
+		},
+		"./20/solid/FaceFrownIcon.svelte": {
+			"types": "./dist/20/solid/FaceFrownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FaceFrownIcon.svelte"
+		},
+		"./20/solid/FaceSmileIcon.svelte": {
+			"types": "./dist/20/solid/FaceSmileIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FaceSmileIcon.svelte"
+		},
+		"./20/solid/FilmIcon.svelte": {
+			"types": "./dist/20/solid/FilmIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FilmIcon.svelte"
+		},
+		"./20/solid/FingerPrintIcon.svelte": {
+			"types": "./dist/20/solid/FingerPrintIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FingerPrintIcon.svelte"
+		},
+		"./20/solid/FireIcon.svelte": {
+			"types": "./dist/20/solid/FireIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FireIcon.svelte"
+		},
+		"./20/solid/FlagIcon.svelte": {
+			"types": "./dist/20/solid/FlagIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FlagIcon.svelte"
+		},
+		"./20/solid/FolderArrowDownIcon.svelte": {
+			"types": "./dist/20/solid/FolderArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FolderArrowDownIcon.svelte"
+		},
+		"./20/solid/FolderMinusIcon.svelte": {
+			"types": "./dist/20/solid/FolderMinusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FolderMinusIcon.svelte"
+		},
+		"./20/solid/FolderOpenIcon.svelte": {
+			"types": "./dist/20/solid/FolderOpenIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FolderOpenIcon.svelte"
+		},
+		"./20/solid/FolderPlusIcon.svelte": {
+			"types": "./dist/20/solid/FolderPlusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FolderPlusIcon.svelte"
+		},
+		"./20/solid/FolderIcon.svelte": {
+			"types": "./dist/20/solid/FolderIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FolderIcon.svelte"
+		},
+		"./20/solid/ForwardIcon.svelte": {
+			"types": "./dist/20/solid/ForwardIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ForwardIcon.svelte"
+		},
+		"./20/solid/FunnelIcon.svelte": {
+			"types": "./dist/20/solid/FunnelIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/FunnelIcon.svelte"
+		},
+		"./20/solid/GifIcon.svelte": {
+			"types": "./dist/20/solid/GifIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/GifIcon.svelte"
+		},
+		"./20/solid/GiftTopIcon.svelte": {
+			"types": "./dist/20/solid/GiftTopIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/GiftTopIcon.svelte"
+		},
+		"./20/solid/GiftIcon.svelte": {
+			"types": "./dist/20/solid/GiftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/GiftIcon.svelte"
+		},
+		"./20/solid/GlobeAltIcon.svelte": {
+			"types": "./dist/20/solid/GlobeAltIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/GlobeAltIcon.svelte"
+		},
+		"./20/solid/GlobeAmericasIcon.svelte": {
+			"types": "./dist/20/solid/GlobeAmericasIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/GlobeAmericasIcon.svelte"
+		},
+		"./20/solid/GlobeAsiaAustraliaIcon.svelte": {
+			"types": "./dist/20/solid/GlobeAsiaAustraliaIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/GlobeAsiaAustraliaIcon.svelte"
+		},
+		"./20/solid/GlobeEuropeAfricaIcon.svelte": {
+			"types": "./dist/20/solid/GlobeEuropeAfricaIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/GlobeEuropeAfricaIcon.svelte"
+		},
+		"./20/solid/HandRaisedIcon.svelte": {
+			"types": "./dist/20/solid/HandRaisedIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/HandRaisedIcon.svelte"
+		},
+		"./20/solid/HandThumbDownIcon.svelte": {
+			"types": "./dist/20/solid/HandThumbDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/HandThumbDownIcon.svelte"
+		},
+		"./20/solid/HandThumbUpIcon.svelte": {
+			"types": "./dist/20/solid/HandThumbUpIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/HandThumbUpIcon.svelte"
+		},
+		"./20/solid/HashtagIcon.svelte": {
+			"types": "./dist/20/solid/HashtagIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/HashtagIcon.svelte"
+		},
+		"./20/solid/HeartIcon.svelte": {
+			"types": "./dist/20/solid/HeartIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/HeartIcon.svelte"
+		},
+		"./20/solid/HomeModernIcon.svelte": {
+			"types": "./dist/20/solid/HomeModernIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/HomeModernIcon.svelte"
+		},
+		"./20/solid/HomeIcon.svelte": {
+			"types": "./dist/20/solid/HomeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/HomeIcon.svelte"
+		},
+		"./20/solid/IdentificationIcon.svelte": {
+			"types": "./dist/20/solid/IdentificationIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/IdentificationIcon.svelte"
+		},
+		"./20/solid/InboxArrowDownIcon.svelte": {
+			"types": "./dist/20/solid/InboxArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/InboxArrowDownIcon.svelte"
+		},
+		"./20/solid/InboxStackIcon.svelte": {
+			"types": "./dist/20/solid/InboxStackIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/InboxStackIcon.svelte"
+		},
+		"./20/solid/InboxIcon.svelte": {
+			"types": "./dist/20/solid/InboxIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/InboxIcon.svelte"
+		},
+		"./20/solid/InformationCircleIcon.svelte": {
+			"types": "./dist/20/solid/InformationCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/InformationCircleIcon.svelte"
+		},
+		"./20/solid/KeyIcon.svelte": {
+			"types": "./dist/20/solid/KeyIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/KeyIcon.svelte"
+		},
+		"./20/solid/LanguageIcon.svelte": {
+			"types": "./dist/20/solid/LanguageIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/LanguageIcon.svelte"
+		},
+		"./20/solid/LifebuoyIcon.svelte": {
+			"types": "./dist/20/solid/LifebuoyIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/LifebuoyIcon.svelte"
+		},
+		"./20/solid/LightBulbIcon.svelte": {
+			"types": "./dist/20/solid/LightBulbIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/LightBulbIcon.svelte"
+		},
+		"./20/solid/LinkIcon.svelte": {
+			"types": "./dist/20/solid/LinkIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/LinkIcon.svelte"
+		},
+		"./20/solid/ListBulletIcon.svelte": {
+			"types": "./dist/20/solid/ListBulletIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ListBulletIcon.svelte"
+		},
+		"./20/solid/LockClosedIcon.svelte": {
+			"types": "./dist/20/solid/LockClosedIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/LockClosedIcon.svelte"
+		},
+		"./20/solid/LockOpenIcon.svelte": {
+			"types": "./dist/20/solid/LockOpenIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/LockOpenIcon.svelte"
+		},
+		"./20/solid/MagnifyingGlassCircleIcon.svelte": {
+			"types": "./dist/20/solid/MagnifyingGlassCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MagnifyingGlassCircleIcon.svelte"
+		},
+		"./20/solid/MagnifyingGlassMinusIcon.svelte": {
+			"types": "./dist/20/solid/MagnifyingGlassMinusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MagnifyingGlassMinusIcon.svelte"
+		},
+		"./20/solid/MagnifyingGlassPlusIcon.svelte": {
+			"types": "./dist/20/solid/MagnifyingGlassPlusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MagnifyingGlassPlusIcon.svelte"
+		},
+		"./20/solid/MagnifyingGlassIcon.svelte": {
+			"types": "./dist/20/solid/MagnifyingGlassIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MagnifyingGlassIcon.svelte"
+		},
+		"./20/solid/MapPinIcon.svelte": {
+			"types": "./dist/20/solid/MapPinIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MapPinIcon.svelte"
+		},
+		"./20/solid/MapIcon.svelte": {
+			"types": "./dist/20/solid/MapIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MapIcon.svelte"
+		},
+		"./20/solid/MegaphoneIcon.svelte": {
+			"types": "./dist/20/solid/MegaphoneIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MegaphoneIcon.svelte"
+		},
+		"./20/solid/MicrophoneIcon.svelte": {
+			"types": "./dist/20/solid/MicrophoneIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MicrophoneIcon.svelte"
+		},
+		"./20/solid/MinusCircleIcon.svelte": {
+			"types": "./dist/20/solid/MinusCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MinusCircleIcon.svelte"
+		},
+		"./20/solid/MinusSmallIcon.svelte": {
+			"types": "./dist/20/solid/MinusSmallIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MinusSmallIcon.svelte"
+		},
+		"./20/solid/MinusIcon.svelte": {
+			"types": "./dist/20/solid/MinusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MinusIcon.svelte"
+		},
+		"./20/solid/MoonIcon.svelte": {
+			"types": "./dist/20/solid/MoonIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MoonIcon.svelte"
+		},
+		"./20/solid/MusicalNoteIcon.svelte": {
+			"types": "./dist/20/solid/MusicalNoteIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/MusicalNoteIcon.svelte"
+		},
+		"./20/solid/NewspaperIcon.svelte": {
+			"types": "./dist/20/solid/NewspaperIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/NewspaperIcon.svelte"
+		},
+		"./20/solid/NoSymbolIcon.svelte": {
+			"types": "./dist/20/solid/NoSymbolIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/NoSymbolIcon.svelte"
+		},
+		"./20/solid/PaintBrushIcon.svelte": {
+			"types": "./dist/20/solid/PaintBrushIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PaintBrushIcon.svelte"
+		},
+		"./20/solid/PaperAirplaneIcon.svelte": {
+			"types": "./dist/20/solid/PaperAirplaneIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PaperAirplaneIcon.svelte"
+		},
+		"./20/solid/PaperClipIcon.svelte": {
+			"types": "./dist/20/solid/PaperClipIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PaperClipIcon.svelte"
+		},
+		"./20/solid/PauseCircleIcon.svelte": {
+			"types": "./dist/20/solid/PauseCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PauseCircleIcon.svelte"
+		},
+		"./20/solid/PauseIcon.svelte": {
+			"types": "./dist/20/solid/PauseIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PauseIcon.svelte"
+		},
+		"./20/solid/PencilSquareIcon.svelte": {
+			"types": "./dist/20/solid/PencilSquareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PencilSquareIcon.svelte"
+		},
+		"./20/solid/PencilIcon.svelte": {
+			"types": "./dist/20/solid/PencilIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PencilIcon.svelte"
+		},
+		"./20/solid/PhoneArrowDownLeftIcon.svelte": {
+			"types": "./dist/20/solid/PhoneArrowDownLeftIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PhoneArrowDownLeftIcon.svelte"
+		},
+		"./20/solid/PhoneArrowUpRightIcon.svelte": {
+			"types": "./dist/20/solid/PhoneArrowUpRightIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PhoneArrowUpRightIcon.svelte"
+		},
+		"./20/solid/PhoneXMarkIcon.svelte": {
+			"types": "./dist/20/solid/PhoneXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PhoneXMarkIcon.svelte"
+		},
+		"./20/solid/PhoneIcon.svelte": {
+			"types": "./dist/20/solid/PhoneIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PhoneIcon.svelte"
+		},
+		"./20/solid/PhotoIcon.svelte": {
+			"types": "./dist/20/solid/PhotoIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PhotoIcon.svelte"
+		},
+		"./20/solid/PlayCircleIcon.svelte": {
+			"types": "./dist/20/solid/PlayCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PlayCircleIcon.svelte"
+		},
+		"./20/solid/PlayPauseIcon.svelte": {
+			"types": "./dist/20/solid/PlayPauseIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PlayPauseIcon.svelte"
+		},
+		"./20/solid/PlayIcon.svelte": {
+			"types": "./dist/20/solid/PlayIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PlayIcon.svelte"
+		},
+		"./20/solid/PlusCircleIcon.svelte": {
+			"types": "./dist/20/solid/PlusCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PlusCircleIcon.svelte"
+		},
+		"./20/solid/PlusSmallIcon.svelte": {
+			"types": "./dist/20/solid/PlusSmallIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PlusSmallIcon.svelte"
+		},
+		"./20/solid/PlusIcon.svelte": {
+			"types": "./dist/20/solid/PlusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PlusIcon.svelte"
+		},
+		"./20/solid/PowerIcon.svelte": {
+			"types": "./dist/20/solid/PowerIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PowerIcon.svelte"
+		},
+		"./20/solid/PresentationChartBarIcon.svelte": {
+			"types": "./dist/20/solid/PresentationChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PresentationChartBarIcon.svelte"
+		},
+		"./20/solid/PresentationChartLineIcon.svelte": {
+			"types": "./dist/20/solid/PresentationChartLineIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PresentationChartLineIcon.svelte"
+		},
+		"./20/solid/PrinterIcon.svelte": {
+			"types": "./dist/20/solid/PrinterIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PrinterIcon.svelte"
+		},
+		"./20/solid/PuzzlePieceIcon.svelte": {
+			"types": "./dist/20/solid/PuzzlePieceIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/PuzzlePieceIcon.svelte"
+		},
+		"./20/solid/QrCodeIcon.svelte": {
+			"types": "./dist/20/solid/QrCodeIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/QrCodeIcon.svelte"
+		},
+		"./20/solid/QuestionMarkCircleIcon.svelte": {
+			"types": "./dist/20/solid/QuestionMarkCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/QuestionMarkCircleIcon.svelte"
+		},
+		"./20/solid/QueueListIcon.svelte": {
+			"types": "./dist/20/solid/QueueListIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/QueueListIcon.svelte"
+		},
+		"./20/solid/RadioIcon.svelte": {
+			"types": "./dist/20/solid/RadioIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/RadioIcon.svelte"
+		},
+		"./20/solid/ReceiptPercentIcon.svelte": {
+			"types": "./dist/20/solid/ReceiptPercentIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ReceiptPercentIcon.svelte"
+		},
+		"./20/solid/ReceiptRefundIcon.svelte": {
+			"types": "./dist/20/solid/ReceiptRefundIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ReceiptRefundIcon.svelte"
+		},
+		"./20/solid/RectangleGroupIcon.svelte": {
+			"types": "./dist/20/solid/RectangleGroupIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/RectangleGroupIcon.svelte"
+		},
+		"./20/solid/RectangleStackIcon.svelte": {
+			"types": "./dist/20/solid/RectangleStackIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/RectangleStackIcon.svelte"
+		},
+		"./20/solid/RocketLaunchIcon.svelte": {
+			"types": "./dist/20/solid/RocketLaunchIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/RocketLaunchIcon.svelte"
+		},
+		"./20/solid/RssIcon.svelte": {
+			"types": "./dist/20/solid/RssIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/RssIcon.svelte"
+		},
+		"./20/solid/ScaleIcon.svelte": {
+			"types": "./dist/20/solid/ScaleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ScaleIcon.svelte"
+		},
+		"./20/solid/ScissorsIcon.svelte": {
+			"types": "./dist/20/solid/ScissorsIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ScissorsIcon.svelte"
+		},
+		"./20/solid/ServerStackIcon.svelte": {
+			"types": "./dist/20/solid/ServerStackIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ServerStackIcon.svelte"
+		},
+		"./20/solid/ServerIcon.svelte": {
+			"types": "./dist/20/solid/ServerIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ServerIcon.svelte"
+		},
+		"./20/solid/ShareIcon.svelte": {
+			"types": "./dist/20/solid/ShareIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ShareIcon.svelte"
+		},
+		"./20/solid/ShieldCheckIcon.svelte": {
+			"types": "./dist/20/solid/ShieldCheckIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ShieldCheckIcon.svelte"
+		},
+		"./20/solid/ShieldExclamationIcon.svelte": {
+			"types": "./dist/20/solid/ShieldExclamationIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ShieldExclamationIcon.svelte"
+		},
+		"./20/solid/ShoppingBagIcon.svelte": {
+			"types": "./dist/20/solid/ShoppingBagIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ShoppingBagIcon.svelte"
+		},
+		"./20/solid/ShoppingCartIcon.svelte": {
+			"types": "./dist/20/solid/ShoppingCartIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ShoppingCartIcon.svelte"
+		},
+		"./20/solid/SignalSlashIcon.svelte": {
+			"types": "./dist/20/solid/SignalSlashIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/SignalSlashIcon.svelte"
+		},
+		"./20/solid/SignalIcon.svelte": {
+			"types": "./dist/20/solid/SignalIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/SignalIcon.svelte"
+		},
+		"./20/solid/SparklesIcon.svelte": {
+			"types": "./dist/20/solid/SparklesIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/SparklesIcon.svelte"
+		},
+		"./20/solid/SpeakerWaveIcon.svelte": {
+			"types": "./dist/20/solid/SpeakerWaveIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/SpeakerWaveIcon.svelte"
+		},
+		"./20/solid/SpeakerXMarkIcon.svelte": {
+			"types": "./dist/20/solid/SpeakerXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/SpeakerXMarkIcon.svelte"
+		},
+		"./20/solid/Square2StackIcon.svelte": {
+			"types": "./dist/20/solid/Square2StackIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Square2StackIcon.svelte"
+		},
+		"./20/solid/Square3Stack3DIcon.svelte": {
+			"types": "./dist/20/solid/Square3Stack3DIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Square3Stack3DIcon.svelte"
+		},
+		"./20/solid/Squares2X2Icon.svelte": {
+			"types": "./dist/20/solid/Squares2X2Icon.svelte.d.ts",
+			"svelte": "./dist/20/solid/Squares2X2Icon.svelte"
+		},
+		"./20/solid/SquaresPlusIcon.svelte": {
+			"types": "./dist/20/solid/SquaresPlusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/SquaresPlusIcon.svelte"
+		},
+		"./20/solid/StarIcon.svelte": {
+			"types": "./dist/20/solid/StarIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/StarIcon.svelte"
+		},
+		"./20/solid/StopCircleIcon.svelte": {
+			"types": "./dist/20/solid/StopCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/StopCircleIcon.svelte"
+		},
+		"./20/solid/StopIcon.svelte": {
+			"types": "./dist/20/solid/StopIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/StopIcon.svelte"
+		},
+		"./20/solid/SunIcon.svelte": {
+			"types": "./dist/20/solid/SunIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/SunIcon.svelte"
+		},
+		"./20/solid/SwatchIcon.svelte": {
+			"types": "./dist/20/solid/SwatchIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/SwatchIcon.svelte"
+		},
+		"./20/solid/TableCellsIcon.svelte": {
+			"types": "./dist/20/solid/TableCellsIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/TableCellsIcon.svelte"
+		},
+		"./20/solid/TagIcon.svelte": {
+			"types": "./dist/20/solid/TagIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/TagIcon.svelte"
+		},
+		"./20/solid/TicketIcon.svelte": {
+			"types": "./dist/20/solid/TicketIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/TicketIcon.svelte"
+		},
+		"./20/solid/TrashIcon.svelte": {
+			"types": "./dist/20/solid/TrashIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/TrashIcon.svelte"
+		},
+		"./20/solid/TrophyIcon.svelte": {
+			"types": "./dist/20/solid/TrophyIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/TrophyIcon.svelte"
+		},
+		"./20/solid/TruckIcon.svelte": {
+			"types": "./dist/20/solid/TruckIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/TruckIcon.svelte"
+		},
+		"./20/solid/TvIcon.svelte": {
+			"types": "./dist/20/solid/TvIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/TvIcon.svelte"
+		},
+		"./20/solid/UserCircleIcon.svelte": {
+			"types": "./dist/20/solid/UserCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/UserCircleIcon.svelte"
+		},
+		"./20/solid/UserGroupIcon.svelte": {
+			"types": "./dist/20/solid/UserGroupIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/UserGroupIcon.svelte"
+		},
+		"./20/solid/UserMinusIcon.svelte": {
+			"types": "./dist/20/solid/UserMinusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/UserMinusIcon.svelte"
+		},
+		"./20/solid/UserPlusIcon.svelte": {
+			"types": "./dist/20/solid/UserPlusIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/UserPlusIcon.svelte"
+		},
+		"./20/solid/UserIcon.svelte": {
+			"types": "./dist/20/solid/UserIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/UserIcon.svelte"
+		},
+		"./20/solid/UsersIcon.svelte": {
+			"types": "./dist/20/solid/UsersIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/UsersIcon.svelte"
+		},
+		"./20/solid/VariableIcon.svelte": {
+			"types": "./dist/20/solid/VariableIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/VariableIcon.svelte"
+		},
+		"./20/solid/VideoCameraSlashIcon.svelte": {
+			"types": "./dist/20/solid/VideoCameraSlashIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/VideoCameraSlashIcon.svelte"
+		},
+		"./20/solid/VideoCameraIcon.svelte": {
+			"types": "./dist/20/solid/VideoCameraIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/VideoCameraIcon.svelte"
+		},
+		"./20/solid/ViewColumnsIcon.svelte": {
+			"types": "./dist/20/solid/ViewColumnsIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ViewColumnsIcon.svelte"
+		},
+		"./20/solid/ViewfinderCircleIcon.svelte": {
+			"types": "./dist/20/solid/ViewfinderCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/ViewfinderCircleIcon.svelte"
+		},
+		"./20/solid/WalletIcon.svelte": {
+			"types": "./dist/20/solid/WalletIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/WalletIcon.svelte"
+		},
+		"./20/solid/WifiIcon.svelte": {
+			"types": "./dist/20/solid/WifiIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/WifiIcon.svelte"
+		},
+		"./20/solid/WindowIcon.svelte": {
+			"types": "./dist/20/solid/WindowIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/WindowIcon.svelte"
+		},
+		"./20/solid/WrenchScrewdriverIcon.svelte": {
+			"types": "./dist/20/solid/WrenchScrewdriverIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/WrenchScrewdriverIcon.svelte"
+		},
+		"./20/solid/WrenchIcon.svelte": {
+			"types": "./dist/20/solid/WrenchIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/WrenchIcon.svelte"
+		},
+		"./20/solid/XCircleIcon.svelte": {
+			"types": "./dist/20/solid/XCircleIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/XCircleIcon.svelte"
+		},
+		"./20/solid/XMarkIcon.svelte": {
+			"types": "./dist/20/solid/XMarkIcon.svelte.d.ts",
+			"svelte": "./dist/20/solid/XMarkIcon.svelte"
+		},
+		"./24/outline/index.js": {
+			"types": "./dist/24/outline/index.d.ts",
+			"svelte": "./dist/24/outline/index.js"
+		},
+		"./24/outline/AcademicCapIcon.svelte": {
+			"types": "./dist/24/outline/AcademicCapIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/AcademicCapIcon.svelte"
+		},
+		"./24/outline/AdjustmentsHorizontalIcon.svelte": {
+			"types": "./dist/24/outline/AdjustmentsHorizontalIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/AdjustmentsHorizontalIcon.svelte"
+		},
+		"./24/outline/AdjustmentsVerticalIcon.svelte": {
+			"types": "./dist/24/outline/AdjustmentsVerticalIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/AdjustmentsVerticalIcon.svelte"
+		},
+		"./24/outline/ArchiveBoxArrowDownIcon.svelte": {
+			"types": "./dist/24/outline/ArchiveBoxArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArchiveBoxArrowDownIcon.svelte"
+		},
+		"./24/outline/ArchiveBoxXMarkIcon.svelte": {
+			"types": "./dist/24/outline/ArchiveBoxXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArchiveBoxXMarkIcon.svelte"
+		},
+		"./24/outline/ArchiveBoxIcon.svelte": {
+			"types": "./dist/24/outline/ArchiveBoxIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArchiveBoxIcon.svelte"
+		},
+		"./24/outline/ArrowDownCircleIcon.svelte": {
+			"types": "./dist/24/outline/ArrowDownCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowDownCircleIcon.svelte"
+		},
+		"./24/outline/ArrowDownLeftIcon.svelte": {
+			"types": "./dist/24/outline/ArrowDownLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowDownLeftIcon.svelte"
+		},
+		"./24/outline/ArrowDownOnSquareStackIcon.svelte": {
+			"types": "./dist/24/outline/ArrowDownOnSquareStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowDownOnSquareStackIcon.svelte"
+		},
+		"./24/outline/ArrowDownOnSquareIcon.svelte": {
+			"types": "./dist/24/outline/ArrowDownOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowDownOnSquareIcon.svelte"
+		},
+		"./24/outline/ArrowDownRightIcon.svelte": {
+			"types": "./dist/24/outline/ArrowDownRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowDownRightIcon.svelte"
+		},
+		"./24/outline/ArrowDownTrayIcon.svelte": {
+			"types": "./dist/24/outline/ArrowDownTrayIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowDownTrayIcon.svelte"
+		},
+		"./24/outline/ArrowDownIcon.svelte": {
+			"types": "./dist/24/outline/ArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowDownIcon.svelte"
+		},
+		"./24/outline/ArrowLeftCircleIcon.svelte": {
+			"types": "./dist/24/outline/ArrowLeftCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowLeftCircleIcon.svelte"
+		},
+		"./24/outline/ArrowLeftOnRectangleIcon.svelte": {
+			"types": "./dist/24/outline/ArrowLeftOnRectangleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowLeftOnRectangleIcon.svelte"
+		},
+		"./24/outline/ArrowLeftIcon.svelte": {
+			"types": "./dist/24/outline/ArrowLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowLeftIcon.svelte"
+		},
+		"./24/outline/ArrowLongDownIcon.svelte": {
+			"types": "./dist/24/outline/ArrowLongDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowLongDownIcon.svelte"
+		},
+		"./24/outline/ArrowLongLeftIcon.svelte": {
+			"types": "./dist/24/outline/ArrowLongLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowLongLeftIcon.svelte"
+		},
+		"./24/outline/ArrowLongRightIcon.svelte": {
+			"types": "./dist/24/outline/ArrowLongRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowLongRightIcon.svelte"
+		},
+		"./24/outline/ArrowLongUpIcon.svelte": {
+			"types": "./dist/24/outline/ArrowLongUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowLongUpIcon.svelte"
+		},
+		"./24/outline/ArrowPathRoundedSquareIcon.svelte": {
+			"types": "./dist/24/outline/ArrowPathRoundedSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowPathRoundedSquareIcon.svelte"
+		},
+		"./24/outline/ArrowPathIcon.svelte": {
+			"types": "./dist/24/outline/ArrowPathIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowPathIcon.svelte"
+		},
+		"./24/outline/ArrowRightCircleIcon.svelte": {
+			"types": "./dist/24/outline/ArrowRightCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowRightCircleIcon.svelte"
+		},
+		"./24/outline/ArrowRightOnRectangleIcon.svelte": {
+			"types": "./dist/24/outline/ArrowRightOnRectangleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowRightOnRectangleIcon.svelte"
+		},
+		"./24/outline/ArrowRightIcon.svelte": {
+			"types": "./dist/24/outline/ArrowRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowRightIcon.svelte"
+		},
+		"./24/outline/ArrowSmallDownIcon.svelte": {
+			"types": "./dist/24/outline/ArrowSmallDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowSmallDownIcon.svelte"
+		},
+		"./24/outline/ArrowSmallLeftIcon.svelte": {
+			"types": "./dist/24/outline/ArrowSmallLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowSmallLeftIcon.svelte"
+		},
+		"./24/outline/ArrowSmallRightIcon.svelte": {
+			"types": "./dist/24/outline/ArrowSmallRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowSmallRightIcon.svelte"
+		},
+		"./24/outline/ArrowSmallUpIcon.svelte": {
+			"types": "./dist/24/outline/ArrowSmallUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowSmallUpIcon.svelte"
+		},
+		"./24/outline/ArrowTopRightOnSquareIcon.svelte": {
+			"types": "./dist/24/outline/ArrowTopRightOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowTopRightOnSquareIcon.svelte"
+		},
+		"./24/outline/ArrowTrendingDownIcon.svelte": {
+			"types": "./dist/24/outline/ArrowTrendingDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowTrendingDownIcon.svelte"
+		},
+		"./24/outline/ArrowTrendingUpIcon.svelte": {
+			"types": "./dist/24/outline/ArrowTrendingUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowTrendingUpIcon.svelte"
+		},
+		"./24/outline/ArrowUpCircleIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUpCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUpCircleIcon.svelte"
+		},
+		"./24/outline/ArrowUpLeftIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUpLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUpLeftIcon.svelte"
+		},
+		"./24/outline/ArrowUpOnSquareStackIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUpOnSquareStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUpOnSquareStackIcon.svelte"
+		},
+		"./24/outline/ArrowUpOnSquareIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUpOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUpOnSquareIcon.svelte"
+		},
+		"./24/outline/ArrowUpRightIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUpRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUpRightIcon.svelte"
+		},
+		"./24/outline/ArrowUpTrayIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUpTrayIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUpTrayIcon.svelte"
+		},
+		"./24/outline/ArrowUpIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUpIcon.svelte"
+		},
+		"./24/outline/ArrowUturnDownIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUturnDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUturnDownIcon.svelte"
+		},
+		"./24/outline/ArrowUturnLeftIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUturnLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUturnLeftIcon.svelte"
+		},
+		"./24/outline/ArrowUturnRightIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUturnRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUturnRightIcon.svelte"
+		},
+		"./24/outline/ArrowUturnUpIcon.svelte": {
+			"types": "./dist/24/outline/ArrowUturnUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowUturnUpIcon.svelte"
+		},
+		"./24/outline/ArrowsPointingInIcon.svelte": {
+			"types": "./dist/24/outline/ArrowsPointingInIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowsPointingInIcon.svelte"
+		},
+		"./24/outline/ArrowsPointingOutIcon.svelte": {
+			"types": "./dist/24/outline/ArrowsPointingOutIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowsPointingOutIcon.svelte"
+		},
+		"./24/outline/ArrowsRightLeftIcon.svelte": {
+			"types": "./dist/24/outline/ArrowsRightLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowsRightLeftIcon.svelte"
+		},
+		"./24/outline/ArrowsUpDownIcon.svelte": {
+			"types": "./dist/24/outline/ArrowsUpDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ArrowsUpDownIcon.svelte"
+		},
+		"./24/outline/AtSymbolIcon.svelte": {
+			"types": "./dist/24/outline/AtSymbolIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/AtSymbolIcon.svelte"
+		},
+		"./24/outline/BackspaceIcon.svelte": {
+			"types": "./dist/24/outline/BackspaceIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BackspaceIcon.svelte"
+		},
+		"./24/outline/BackwardIcon.svelte": {
+			"types": "./dist/24/outline/BackwardIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BackwardIcon.svelte"
+		},
+		"./24/outline/BanknotesIcon.svelte": {
+			"types": "./dist/24/outline/BanknotesIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BanknotesIcon.svelte"
+		},
+		"./24/outline/Bars2Icon.svelte": {
+			"types": "./dist/24/outline/Bars2Icon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Bars2Icon.svelte"
+		},
+		"./24/outline/Bars3BottomLeftIcon.svelte": {
+			"types": "./dist/24/outline/Bars3BottomLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Bars3BottomLeftIcon.svelte"
+		},
+		"./24/outline/Bars3BottomRightIcon.svelte": {
+			"types": "./dist/24/outline/Bars3BottomRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Bars3BottomRightIcon.svelte"
+		},
+		"./24/outline/Bars3CenterLeftIcon.svelte": {
+			"types": "./dist/24/outline/Bars3CenterLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Bars3CenterLeftIcon.svelte"
+		},
+		"./24/outline/Bars3Icon.svelte": {
+			"types": "./dist/24/outline/Bars3Icon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Bars3Icon.svelte"
+		},
+		"./24/outline/Bars4Icon.svelte": {
+			"types": "./dist/24/outline/Bars4Icon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Bars4Icon.svelte"
+		},
+		"./24/outline/BarsArrowDownIcon.svelte": {
+			"types": "./dist/24/outline/BarsArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BarsArrowDownIcon.svelte"
+		},
+		"./24/outline/BarsArrowUpIcon.svelte": {
+			"types": "./dist/24/outline/BarsArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BarsArrowUpIcon.svelte"
+		},
+		"./24/outline/Battery0Icon.svelte": {
+			"types": "./dist/24/outline/Battery0Icon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Battery0Icon.svelte"
+		},
+		"./24/outline/Battery100Icon.svelte": {
+			"types": "./dist/24/outline/Battery100Icon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Battery100Icon.svelte"
+		},
+		"./24/outline/Battery50Icon.svelte": {
+			"types": "./dist/24/outline/Battery50Icon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Battery50Icon.svelte"
+		},
+		"./24/outline/BeakerIcon.svelte": {
+			"types": "./dist/24/outline/BeakerIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BeakerIcon.svelte"
+		},
+		"./24/outline/BellAlertIcon.svelte": {
+			"types": "./dist/24/outline/BellAlertIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BellAlertIcon.svelte"
+		},
+		"./24/outline/BellSlashIcon.svelte": {
+			"types": "./dist/24/outline/BellSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BellSlashIcon.svelte"
+		},
+		"./24/outline/BellSnoozeIcon.svelte": {
+			"types": "./dist/24/outline/BellSnoozeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BellSnoozeIcon.svelte"
+		},
+		"./24/outline/BellIcon.svelte": {
+			"types": "./dist/24/outline/BellIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BellIcon.svelte"
+		},
+		"./24/outline/BoltSlashIcon.svelte": {
+			"types": "./dist/24/outline/BoltSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BoltSlashIcon.svelte"
+		},
+		"./24/outline/BoltIcon.svelte": {
+			"types": "./dist/24/outline/BoltIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BoltIcon.svelte"
+		},
+		"./24/outline/BookOpenIcon.svelte": {
+			"types": "./dist/24/outline/BookOpenIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BookOpenIcon.svelte"
+		},
+		"./24/outline/BookmarkSlashIcon.svelte": {
+			"types": "./dist/24/outline/BookmarkSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BookmarkSlashIcon.svelte"
+		},
+		"./24/outline/BookmarkSquareIcon.svelte": {
+			"types": "./dist/24/outline/BookmarkSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BookmarkSquareIcon.svelte"
+		},
+		"./24/outline/BookmarkIcon.svelte": {
+			"types": "./dist/24/outline/BookmarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BookmarkIcon.svelte"
+		},
+		"./24/outline/BriefcaseIcon.svelte": {
+			"types": "./dist/24/outline/BriefcaseIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BriefcaseIcon.svelte"
+		},
+		"./24/outline/BugAntIcon.svelte": {
+			"types": "./dist/24/outline/BugAntIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BugAntIcon.svelte"
+		},
+		"./24/outline/BuildingLibraryIcon.svelte": {
+			"types": "./dist/24/outline/BuildingLibraryIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BuildingLibraryIcon.svelte"
+		},
+		"./24/outline/BuildingOffice2Icon.svelte": {
+			"types": "./dist/24/outline/BuildingOffice2Icon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BuildingOffice2Icon.svelte"
+		},
+		"./24/outline/BuildingOfficeIcon.svelte": {
+			"types": "./dist/24/outline/BuildingOfficeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BuildingOfficeIcon.svelte"
+		},
+		"./24/outline/BuildingStorefrontIcon.svelte": {
+			"types": "./dist/24/outline/BuildingStorefrontIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/BuildingStorefrontIcon.svelte"
+		},
+		"./24/outline/CakeIcon.svelte": {
+			"types": "./dist/24/outline/CakeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CakeIcon.svelte"
+		},
+		"./24/outline/CalculatorIcon.svelte": {
+			"types": "./dist/24/outline/CalculatorIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CalculatorIcon.svelte"
+		},
+		"./24/outline/CalendarDaysIcon.svelte": {
+			"types": "./dist/24/outline/CalendarDaysIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CalendarDaysIcon.svelte"
+		},
+		"./24/outline/CalendarIcon.svelte": {
+			"types": "./dist/24/outline/CalendarIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CalendarIcon.svelte"
+		},
+		"./24/outline/CameraIcon.svelte": {
+			"types": "./dist/24/outline/CameraIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CameraIcon.svelte"
+		},
+		"./24/outline/ChartBarSquareIcon.svelte": {
+			"types": "./dist/24/outline/ChartBarSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChartBarSquareIcon.svelte"
+		},
+		"./24/outline/ChartBarIcon.svelte": {
+			"types": "./dist/24/outline/ChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChartBarIcon.svelte"
+		},
+		"./24/outline/ChartPieIcon.svelte": {
+			"types": "./dist/24/outline/ChartPieIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChartPieIcon.svelte"
+		},
+		"./24/outline/ChatBubbleBottomCenterTextIcon.svelte": {
+			"types": "./dist/24/outline/ChatBubbleBottomCenterTextIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChatBubbleBottomCenterTextIcon.svelte"
+		},
+		"./24/outline/ChatBubbleBottomCenterIcon.svelte": {
+			"types": "./dist/24/outline/ChatBubbleBottomCenterIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChatBubbleBottomCenterIcon.svelte"
+		},
+		"./24/outline/ChatBubbleLeftEllipsisIcon.svelte": {
+			"types": "./dist/24/outline/ChatBubbleLeftEllipsisIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChatBubbleLeftEllipsisIcon.svelte"
+		},
+		"./24/outline/ChatBubbleLeftRightIcon.svelte": {
+			"types": "./dist/24/outline/ChatBubbleLeftRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChatBubbleLeftRightIcon.svelte"
+		},
+		"./24/outline/ChatBubbleLeftIcon.svelte": {
+			"types": "./dist/24/outline/ChatBubbleLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChatBubbleLeftIcon.svelte"
+		},
+		"./24/outline/ChatBubbleOvalLeftEllipsisIcon.svelte": {
+			"types": "./dist/24/outline/ChatBubbleOvalLeftEllipsisIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChatBubbleOvalLeftEllipsisIcon.svelte"
+		},
+		"./24/outline/ChatBubbleOvalLeftIcon.svelte": {
+			"types": "./dist/24/outline/ChatBubbleOvalLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChatBubbleOvalLeftIcon.svelte"
+		},
+		"./24/outline/CheckBadgeIcon.svelte": {
+			"types": "./dist/24/outline/CheckBadgeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CheckBadgeIcon.svelte"
+		},
+		"./24/outline/CheckCircleIcon.svelte": {
+			"types": "./dist/24/outline/CheckCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CheckCircleIcon.svelte"
+		},
+		"./24/outline/CheckIcon.svelte": {
+			"types": "./dist/24/outline/CheckIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CheckIcon.svelte"
+		},
+		"./24/outline/ChevronDoubleDownIcon.svelte": {
+			"types": "./dist/24/outline/ChevronDoubleDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronDoubleDownIcon.svelte"
+		},
+		"./24/outline/ChevronDoubleLeftIcon.svelte": {
+			"types": "./dist/24/outline/ChevronDoubleLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronDoubleLeftIcon.svelte"
+		},
+		"./24/outline/ChevronDoubleRightIcon.svelte": {
+			"types": "./dist/24/outline/ChevronDoubleRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronDoubleRightIcon.svelte"
+		},
+		"./24/outline/ChevronDoubleUpIcon.svelte": {
+			"types": "./dist/24/outline/ChevronDoubleUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronDoubleUpIcon.svelte"
+		},
+		"./24/outline/ChevronDownIcon.svelte": {
+			"types": "./dist/24/outline/ChevronDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronDownIcon.svelte"
+		},
+		"./24/outline/ChevronLeftIcon.svelte": {
+			"types": "./dist/24/outline/ChevronLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronLeftIcon.svelte"
+		},
+		"./24/outline/ChevronRightIcon.svelte": {
+			"types": "./dist/24/outline/ChevronRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronRightIcon.svelte"
+		},
+		"./24/outline/ChevronUpDownIcon.svelte": {
+			"types": "./dist/24/outline/ChevronUpDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronUpDownIcon.svelte"
+		},
+		"./24/outline/ChevronUpIcon.svelte": {
+			"types": "./dist/24/outline/ChevronUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ChevronUpIcon.svelte"
+		},
+		"./24/outline/CircleStackIcon.svelte": {
+			"types": "./dist/24/outline/CircleStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CircleStackIcon.svelte"
+		},
+		"./24/outline/ClipboardDocumentCheckIcon.svelte": {
+			"types": "./dist/24/outline/ClipboardDocumentCheckIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ClipboardDocumentCheckIcon.svelte"
+		},
+		"./24/outline/ClipboardDocumentListIcon.svelte": {
+			"types": "./dist/24/outline/ClipboardDocumentListIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ClipboardDocumentListIcon.svelte"
+		},
+		"./24/outline/ClipboardDocumentIcon.svelte": {
+			"types": "./dist/24/outline/ClipboardDocumentIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ClipboardDocumentIcon.svelte"
+		},
+		"./24/outline/ClipboardIcon.svelte": {
+			"types": "./dist/24/outline/ClipboardIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ClipboardIcon.svelte"
+		},
+		"./24/outline/ClockIcon.svelte": {
+			"types": "./dist/24/outline/ClockIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ClockIcon.svelte"
+		},
+		"./24/outline/CloudArrowDownIcon.svelte": {
+			"types": "./dist/24/outline/CloudArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CloudArrowDownIcon.svelte"
+		},
+		"./24/outline/CloudArrowUpIcon.svelte": {
+			"types": "./dist/24/outline/CloudArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CloudArrowUpIcon.svelte"
+		},
+		"./24/outline/CloudIcon.svelte": {
+			"types": "./dist/24/outline/CloudIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CloudIcon.svelte"
+		},
+		"./24/outline/CodeBracketSquareIcon.svelte": {
+			"types": "./dist/24/outline/CodeBracketSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CodeBracketSquareIcon.svelte"
+		},
+		"./24/outline/CodeBracketIcon.svelte": {
+			"types": "./dist/24/outline/CodeBracketIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CodeBracketIcon.svelte"
+		},
+		"./24/outline/Cog6ToothIcon.svelte": {
+			"types": "./dist/24/outline/Cog6ToothIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Cog6ToothIcon.svelte"
+		},
+		"./24/outline/Cog8ToothIcon.svelte": {
+			"types": "./dist/24/outline/Cog8ToothIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Cog8ToothIcon.svelte"
+		},
+		"./24/outline/CogIcon.svelte": {
+			"types": "./dist/24/outline/CogIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CogIcon.svelte"
+		},
+		"./24/outline/CommandLineIcon.svelte": {
+			"types": "./dist/24/outline/CommandLineIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CommandLineIcon.svelte"
+		},
+		"./24/outline/ComputerDesktopIcon.svelte": {
+			"types": "./dist/24/outline/ComputerDesktopIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ComputerDesktopIcon.svelte"
+		},
+		"./24/outline/CpuChipIcon.svelte": {
+			"types": "./dist/24/outline/CpuChipIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CpuChipIcon.svelte"
+		},
+		"./24/outline/CreditCardIcon.svelte": {
+			"types": "./dist/24/outline/CreditCardIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CreditCardIcon.svelte"
+		},
+		"./24/outline/CubeTransparentIcon.svelte": {
+			"types": "./dist/24/outline/CubeTransparentIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CubeTransparentIcon.svelte"
+		},
+		"./24/outline/CubeIcon.svelte": {
+			"types": "./dist/24/outline/CubeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CubeIcon.svelte"
+		},
+		"./24/outline/CurrencyBangladeshiIcon.svelte": {
+			"types": "./dist/24/outline/CurrencyBangladeshiIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CurrencyBangladeshiIcon.svelte"
+		},
+		"./24/outline/CurrencyDollarIcon.svelte": {
+			"types": "./dist/24/outline/CurrencyDollarIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CurrencyDollarIcon.svelte"
+		},
+		"./24/outline/CurrencyEuroIcon.svelte": {
+			"types": "./dist/24/outline/CurrencyEuroIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CurrencyEuroIcon.svelte"
+		},
+		"./24/outline/CurrencyPoundIcon.svelte": {
+			"types": "./dist/24/outline/CurrencyPoundIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CurrencyPoundIcon.svelte"
+		},
+		"./24/outline/CurrencyRupeeIcon.svelte": {
+			"types": "./dist/24/outline/CurrencyRupeeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CurrencyRupeeIcon.svelte"
+		},
+		"./24/outline/CurrencyYenIcon.svelte": {
+			"types": "./dist/24/outline/CurrencyYenIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CurrencyYenIcon.svelte"
+		},
+		"./24/outline/CursorArrowRaysIcon.svelte": {
+			"types": "./dist/24/outline/CursorArrowRaysIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CursorArrowRaysIcon.svelte"
+		},
+		"./24/outline/CursorArrowRippleIcon.svelte": {
+			"types": "./dist/24/outline/CursorArrowRippleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/CursorArrowRippleIcon.svelte"
+		},
+		"./24/outline/DevicePhoneMobileIcon.svelte": {
+			"types": "./dist/24/outline/DevicePhoneMobileIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DevicePhoneMobileIcon.svelte"
+		},
+		"./24/outline/DeviceTabletIcon.svelte": {
+			"types": "./dist/24/outline/DeviceTabletIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DeviceTabletIcon.svelte"
+		},
+		"./24/outline/DocumentArrowDownIcon.svelte": {
+			"types": "./dist/24/outline/DocumentArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentArrowDownIcon.svelte"
+		},
+		"./24/outline/DocumentArrowUpIcon.svelte": {
+			"types": "./dist/24/outline/DocumentArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentArrowUpIcon.svelte"
+		},
+		"./24/outline/DocumentChartBarIcon.svelte": {
+			"types": "./dist/24/outline/DocumentChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentChartBarIcon.svelte"
+		},
+		"./24/outline/DocumentCheckIcon.svelte": {
+			"types": "./dist/24/outline/DocumentCheckIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentCheckIcon.svelte"
+		},
+		"./24/outline/DocumentDuplicateIcon.svelte": {
+			"types": "./dist/24/outline/DocumentDuplicateIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentDuplicateIcon.svelte"
+		},
+		"./24/outline/DocumentMagnifyingGlassIcon.svelte": {
+			"types": "./dist/24/outline/DocumentMagnifyingGlassIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentMagnifyingGlassIcon.svelte"
+		},
+		"./24/outline/DocumentMinusIcon.svelte": {
+			"types": "./dist/24/outline/DocumentMinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentMinusIcon.svelte"
+		},
+		"./24/outline/DocumentPlusIcon.svelte": {
+			"types": "./dist/24/outline/DocumentPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentPlusIcon.svelte"
+		},
+		"./24/outline/DocumentTextIcon.svelte": {
+			"types": "./dist/24/outline/DocumentTextIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentTextIcon.svelte"
+		},
+		"./24/outline/DocumentIcon.svelte": {
+			"types": "./dist/24/outline/DocumentIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/DocumentIcon.svelte"
+		},
+		"./24/outline/EllipsisHorizontalCircleIcon.svelte": {
+			"types": "./dist/24/outline/EllipsisHorizontalCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/EllipsisHorizontalCircleIcon.svelte"
+		},
+		"./24/outline/EllipsisHorizontalIcon.svelte": {
+			"types": "./dist/24/outline/EllipsisHorizontalIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/EllipsisHorizontalIcon.svelte"
+		},
+		"./24/outline/EllipsisVerticalIcon.svelte": {
+			"types": "./dist/24/outline/EllipsisVerticalIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/EllipsisVerticalIcon.svelte"
+		},
+		"./24/outline/EnvelopeOpenIcon.svelte": {
+			"types": "./dist/24/outline/EnvelopeOpenIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/EnvelopeOpenIcon.svelte"
+		},
+		"./24/outline/EnvelopeIcon.svelte": {
+			"types": "./dist/24/outline/EnvelopeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/EnvelopeIcon.svelte"
+		},
+		"./24/outline/ExclamationCircleIcon.svelte": {
+			"types": "./dist/24/outline/ExclamationCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ExclamationCircleIcon.svelte"
+		},
+		"./24/outline/ExclamationTriangleIcon.svelte": {
+			"types": "./dist/24/outline/ExclamationTriangleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ExclamationTriangleIcon.svelte"
+		},
+		"./24/outline/EyeDropperIcon.svelte": {
+			"types": "./dist/24/outline/EyeDropperIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/EyeDropperIcon.svelte"
+		},
+		"./24/outline/EyeSlashIcon.svelte": {
+			"types": "./dist/24/outline/EyeSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/EyeSlashIcon.svelte"
+		},
+		"./24/outline/EyeIcon.svelte": {
+			"types": "./dist/24/outline/EyeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/EyeIcon.svelte"
+		},
+		"./24/outline/FaceFrownIcon.svelte": {
+			"types": "./dist/24/outline/FaceFrownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FaceFrownIcon.svelte"
+		},
+		"./24/outline/FaceSmileIcon.svelte": {
+			"types": "./dist/24/outline/FaceSmileIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FaceSmileIcon.svelte"
+		},
+		"./24/outline/FilmIcon.svelte": {
+			"types": "./dist/24/outline/FilmIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FilmIcon.svelte"
+		},
+		"./24/outline/FingerPrintIcon.svelte": {
+			"types": "./dist/24/outline/FingerPrintIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FingerPrintIcon.svelte"
+		},
+		"./24/outline/FireIcon.svelte": {
+			"types": "./dist/24/outline/FireIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FireIcon.svelte"
+		},
+		"./24/outline/FlagIcon.svelte": {
+			"types": "./dist/24/outline/FlagIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FlagIcon.svelte"
+		},
+		"./24/outline/FolderArrowDownIcon.svelte": {
+			"types": "./dist/24/outline/FolderArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FolderArrowDownIcon.svelte"
+		},
+		"./24/outline/FolderMinusIcon.svelte": {
+			"types": "./dist/24/outline/FolderMinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FolderMinusIcon.svelte"
+		},
+		"./24/outline/FolderOpenIcon.svelte": {
+			"types": "./dist/24/outline/FolderOpenIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FolderOpenIcon.svelte"
+		},
+		"./24/outline/FolderPlusIcon.svelte": {
+			"types": "./dist/24/outline/FolderPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FolderPlusIcon.svelte"
+		},
+		"./24/outline/FolderIcon.svelte": {
+			"types": "./dist/24/outline/FolderIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FolderIcon.svelte"
+		},
+		"./24/outline/ForwardIcon.svelte": {
+			"types": "./dist/24/outline/ForwardIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ForwardIcon.svelte"
+		},
+		"./24/outline/FunnelIcon.svelte": {
+			"types": "./dist/24/outline/FunnelIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/FunnelIcon.svelte"
+		},
+		"./24/outline/GifIcon.svelte": {
+			"types": "./dist/24/outline/GifIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/GifIcon.svelte"
+		},
+		"./24/outline/GiftTopIcon.svelte": {
+			"types": "./dist/24/outline/GiftTopIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/GiftTopIcon.svelte"
+		},
+		"./24/outline/GiftIcon.svelte": {
+			"types": "./dist/24/outline/GiftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/GiftIcon.svelte"
+		},
+		"./24/outline/GlobeAltIcon.svelte": {
+			"types": "./dist/24/outline/GlobeAltIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/GlobeAltIcon.svelte"
+		},
+		"./24/outline/GlobeAmericasIcon.svelte": {
+			"types": "./dist/24/outline/GlobeAmericasIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/GlobeAmericasIcon.svelte"
+		},
+		"./24/outline/GlobeAsiaAustraliaIcon.svelte": {
+			"types": "./dist/24/outline/GlobeAsiaAustraliaIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/GlobeAsiaAustraliaIcon.svelte"
+		},
+		"./24/outline/GlobeEuropeAfricaIcon.svelte": {
+			"types": "./dist/24/outline/GlobeEuropeAfricaIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/GlobeEuropeAfricaIcon.svelte"
+		},
+		"./24/outline/HandRaisedIcon.svelte": {
+			"types": "./dist/24/outline/HandRaisedIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/HandRaisedIcon.svelte"
+		},
+		"./24/outline/HandThumbDownIcon.svelte": {
+			"types": "./dist/24/outline/HandThumbDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/HandThumbDownIcon.svelte"
+		},
+		"./24/outline/HandThumbUpIcon.svelte": {
+			"types": "./dist/24/outline/HandThumbUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/HandThumbUpIcon.svelte"
+		},
+		"./24/outline/HashtagIcon.svelte": {
+			"types": "./dist/24/outline/HashtagIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/HashtagIcon.svelte"
+		},
+		"./24/outline/HeartIcon.svelte": {
+			"types": "./dist/24/outline/HeartIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/HeartIcon.svelte"
+		},
+		"./24/outline/HomeModernIcon.svelte": {
+			"types": "./dist/24/outline/HomeModernIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/HomeModernIcon.svelte"
+		},
+		"./24/outline/HomeIcon.svelte": {
+			"types": "./dist/24/outline/HomeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/HomeIcon.svelte"
+		},
+		"./24/outline/IdentificationIcon.svelte": {
+			"types": "./dist/24/outline/IdentificationIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/IdentificationIcon.svelte"
+		},
+		"./24/outline/InboxArrowDownIcon.svelte": {
+			"types": "./dist/24/outline/InboxArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/InboxArrowDownIcon.svelte"
+		},
+		"./24/outline/InboxStackIcon.svelte": {
+			"types": "./dist/24/outline/InboxStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/InboxStackIcon.svelte"
+		},
+		"./24/outline/InboxIcon.svelte": {
+			"types": "./dist/24/outline/InboxIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/InboxIcon.svelte"
+		},
+		"./24/outline/InformationCircleIcon.svelte": {
+			"types": "./dist/24/outline/InformationCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/InformationCircleIcon.svelte"
+		},
+		"./24/outline/KeyIcon.svelte": {
+			"types": "./dist/24/outline/KeyIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/KeyIcon.svelte"
+		},
+		"./24/outline/LanguageIcon.svelte": {
+			"types": "./dist/24/outline/LanguageIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/LanguageIcon.svelte"
+		},
+		"./24/outline/LifebuoyIcon.svelte": {
+			"types": "./dist/24/outline/LifebuoyIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/LifebuoyIcon.svelte"
+		},
+		"./24/outline/LightBulbIcon.svelte": {
+			"types": "./dist/24/outline/LightBulbIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/LightBulbIcon.svelte"
+		},
+		"./24/outline/LinkIcon.svelte": {
+			"types": "./dist/24/outline/LinkIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/LinkIcon.svelte"
+		},
+		"./24/outline/ListBulletIcon.svelte": {
+			"types": "./dist/24/outline/ListBulletIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ListBulletIcon.svelte"
+		},
+		"./24/outline/LockClosedIcon.svelte": {
+			"types": "./dist/24/outline/LockClosedIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/LockClosedIcon.svelte"
+		},
+		"./24/outline/LockOpenIcon.svelte": {
+			"types": "./dist/24/outline/LockOpenIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/LockOpenIcon.svelte"
+		},
+		"./24/outline/MagnifyingGlassCircleIcon.svelte": {
+			"types": "./dist/24/outline/MagnifyingGlassCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MagnifyingGlassCircleIcon.svelte"
+		},
+		"./24/outline/MagnifyingGlassMinusIcon.svelte": {
+			"types": "./dist/24/outline/MagnifyingGlassMinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MagnifyingGlassMinusIcon.svelte"
+		},
+		"./24/outline/MagnifyingGlassPlusIcon.svelte": {
+			"types": "./dist/24/outline/MagnifyingGlassPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MagnifyingGlassPlusIcon.svelte"
+		},
+		"./24/outline/MagnifyingGlassIcon.svelte": {
+			"types": "./dist/24/outline/MagnifyingGlassIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MagnifyingGlassIcon.svelte"
+		},
+		"./24/outline/MapPinIcon.svelte": {
+			"types": "./dist/24/outline/MapPinIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MapPinIcon.svelte"
+		},
+		"./24/outline/MapIcon.svelte": {
+			"types": "./dist/24/outline/MapIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MapIcon.svelte"
+		},
+		"./24/outline/MegaphoneIcon.svelte": {
+			"types": "./dist/24/outline/MegaphoneIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MegaphoneIcon.svelte"
+		},
+		"./24/outline/MicrophoneIcon.svelte": {
+			"types": "./dist/24/outline/MicrophoneIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MicrophoneIcon.svelte"
+		},
+		"./24/outline/MinusCircleIcon.svelte": {
+			"types": "./dist/24/outline/MinusCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MinusCircleIcon.svelte"
+		},
+		"./24/outline/MinusSmallIcon.svelte": {
+			"types": "./dist/24/outline/MinusSmallIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MinusSmallIcon.svelte"
+		},
+		"./24/outline/MinusIcon.svelte": {
+			"types": "./dist/24/outline/MinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MinusIcon.svelte"
+		},
+		"./24/outline/MoonIcon.svelte": {
+			"types": "./dist/24/outline/MoonIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MoonIcon.svelte"
+		},
+		"./24/outline/MusicalNoteIcon.svelte": {
+			"types": "./dist/24/outline/MusicalNoteIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/MusicalNoteIcon.svelte"
+		},
+		"./24/outline/NewspaperIcon.svelte": {
+			"types": "./dist/24/outline/NewspaperIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/NewspaperIcon.svelte"
+		},
+		"./24/outline/NoSymbolIcon.svelte": {
+			"types": "./dist/24/outline/NoSymbolIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/NoSymbolIcon.svelte"
+		},
+		"./24/outline/PaintBrushIcon.svelte": {
+			"types": "./dist/24/outline/PaintBrushIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PaintBrushIcon.svelte"
+		},
+		"./24/outline/PaperAirplaneIcon.svelte": {
+			"types": "./dist/24/outline/PaperAirplaneIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PaperAirplaneIcon.svelte"
+		},
+		"./24/outline/PaperClipIcon.svelte": {
+			"types": "./dist/24/outline/PaperClipIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PaperClipIcon.svelte"
+		},
+		"./24/outline/PauseCircleIcon.svelte": {
+			"types": "./dist/24/outline/PauseCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PauseCircleIcon.svelte"
+		},
+		"./24/outline/PauseIcon.svelte": {
+			"types": "./dist/24/outline/PauseIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PauseIcon.svelte"
+		},
+		"./24/outline/PencilSquareIcon.svelte": {
+			"types": "./dist/24/outline/PencilSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PencilSquareIcon.svelte"
+		},
+		"./24/outline/PencilIcon.svelte": {
+			"types": "./dist/24/outline/PencilIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PencilIcon.svelte"
+		},
+		"./24/outline/PhoneArrowDownLeftIcon.svelte": {
+			"types": "./dist/24/outline/PhoneArrowDownLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PhoneArrowDownLeftIcon.svelte"
+		},
+		"./24/outline/PhoneArrowUpRightIcon.svelte": {
+			"types": "./dist/24/outline/PhoneArrowUpRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PhoneArrowUpRightIcon.svelte"
+		},
+		"./24/outline/PhoneXMarkIcon.svelte": {
+			"types": "./dist/24/outline/PhoneXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PhoneXMarkIcon.svelte"
+		},
+		"./24/outline/PhoneIcon.svelte": {
+			"types": "./dist/24/outline/PhoneIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PhoneIcon.svelte"
+		},
+		"./24/outline/PhotoIcon.svelte": {
+			"types": "./dist/24/outline/PhotoIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PhotoIcon.svelte"
+		},
+		"./24/outline/PlayCircleIcon.svelte": {
+			"types": "./dist/24/outline/PlayCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PlayCircleIcon.svelte"
+		},
+		"./24/outline/PlayPauseIcon.svelte": {
+			"types": "./dist/24/outline/PlayPauseIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PlayPauseIcon.svelte"
+		},
+		"./24/outline/PlayIcon.svelte": {
+			"types": "./dist/24/outline/PlayIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PlayIcon.svelte"
+		},
+		"./24/outline/PlusCircleIcon.svelte": {
+			"types": "./dist/24/outline/PlusCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PlusCircleIcon.svelte"
+		},
+		"./24/outline/PlusSmallIcon.svelte": {
+			"types": "./dist/24/outline/PlusSmallIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PlusSmallIcon.svelte"
+		},
+		"./24/outline/PlusIcon.svelte": {
+			"types": "./dist/24/outline/PlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PlusIcon.svelte"
+		},
+		"./24/outline/PowerIcon.svelte": {
+			"types": "./dist/24/outline/PowerIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PowerIcon.svelte"
+		},
+		"./24/outline/PresentationChartBarIcon.svelte": {
+			"types": "./dist/24/outline/PresentationChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PresentationChartBarIcon.svelte"
+		},
+		"./24/outline/PresentationChartLineIcon.svelte": {
+			"types": "./dist/24/outline/PresentationChartLineIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PresentationChartLineIcon.svelte"
+		},
+		"./24/outline/PrinterIcon.svelte": {
+			"types": "./dist/24/outline/PrinterIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PrinterIcon.svelte"
+		},
+		"./24/outline/PuzzlePieceIcon.svelte": {
+			"types": "./dist/24/outline/PuzzlePieceIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/PuzzlePieceIcon.svelte"
+		},
+		"./24/outline/QrCodeIcon.svelte": {
+			"types": "./dist/24/outline/QrCodeIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/QrCodeIcon.svelte"
+		},
+		"./24/outline/QuestionMarkCircleIcon.svelte": {
+			"types": "./dist/24/outline/QuestionMarkCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/QuestionMarkCircleIcon.svelte"
+		},
+		"./24/outline/QueueListIcon.svelte": {
+			"types": "./dist/24/outline/QueueListIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/QueueListIcon.svelte"
+		},
+		"./24/outline/RadioIcon.svelte": {
+			"types": "./dist/24/outline/RadioIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/RadioIcon.svelte"
+		},
+		"./24/outline/ReceiptPercentIcon.svelte": {
+			"types": "./dist/24/outline/ReceiptPercentIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ReceiptPercentIcon.svelte"
+		},
+		"./24/outline/ReceiptRefundIcon.svelte": {
+			"types": "./dist/24/outline/ReceiptRefundIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ReceiptRefundIcon.svelte"
+		},
+		"./24/outline/RectangleGroupIcon.svelte": {
+			"types": "./dist/24/outline/RectangleGroupIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/RectangleGroupIcon.svelte"
+		},
+		"./24/outline/RectangleStackIcon.svelte": {
+			"types": "./dist/24/outline/RectangleStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/RectangleStackIcon.svelte"
+		},
+		"./24/outline/RocketLaunchIcon.svelte": {
+			"types": "./dist/24/outline/RocketLaunchIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/RocketLaunchIcon.svelte"
+		},
+		"./24/outline/RssIcon.svelte": {
+			"types": "./dist/24/outline/RssIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/RssIcon.svelte"
+		},
+		"./24/outline/ScaleIcon.svelte": {
+			"types": "./dist/24/outline/ScaleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ScaleIcon.svelte"
+		},
+		"./24/outline/ScissorsIcon.svelte": {
+			"types": "./dist/24/outline/ScissorsIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ScissorsIcon.svelte"
+		},
+		"./24/outline/ServerStackIcon.svelte": {
+			"types": "./dist/24/outline/ServerStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ServerStackIcon.svelte"
+		},
+		"./24/outline/ServerIcon.svelte": {
+			"types": "./dist/24/outline/ServerIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ServerIcon.svelte"
+		},
+		"./24/outline/ShareIcon.svelte": {
+			"types": "./dist/24/outline/ShareIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ShareIcon.svelte"
+		},
+		"./24/outline/ShieldCheckIcon.svelte": {
+			"types": "./dist/24/outline/ShieldCheckIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ShieldCheckIcon.svelte"
+		},
+		"./24/outline/ShieldExclamationIcon.svelte": {
+			"types": "./dist/24/outline/ShieldExclamationIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ShieldExclamationIcon.svelte"
+		},
+		"./24/outline/ShoppingBagIcon.svelte": {
+			"types": "./dist/24/outline/ShoppingBagIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ShoppingBagIcon.svelte"
+		},
+		"./24/outline/ShoppingCartIcon.svelte": {
+			"types": "./dist/24/outline/ShoppingCartIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ShoppingCartIcon.svelte"
+		},
+		"./24/outline/SignalSlashIcon.svelte": {
+			"types": "./dist/24/outline/SignalSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/SignalSlashIcon.svelte"
+		},
+		"./24/outline/SignalIcon.svelte": {
+			"types": "./dist/24/outline/SignalIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/SignalIcon.svelte"
+		},
+		"./24/outline/SparklesIcon.svelte": {
+			"types": "./dist/24/outline/SparklesIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/SparklesIcon.svelte"
+		},
+		"./24/outline/SpeakerWaveIcon.svelte": {
+			"types": "./dist/24/outline/SpeakerWaveIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/SpeakerWaveIcon.svelte"
+		},
+		"./24/outline/SpeakerXMarkIcon.svelte": {
+			"types": "./dist/24/outline/SpeakerXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/SpeakerXMarkIcon.svelte"
+		},
+		"./24/outline/Square2StackIcon.svelte": {
+			"types": "./dist/24/outline/Square2StackIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Square2StackIcon.svelte"
+		},
+		"./24/outline/Square3Stack3DIcon.svelte": {
+			"types": "./dist/24/outline/Square3Stack3DIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Square3Stack3DIcon.svelte"
+		},
+		"./24/outline/Squares2X2Icon.svelte": {
+			"types": "./dist/24/outline/Squares2X2Icon.svelte.d.ts",
+			"svelte": "./dist/24/outline/Squares2X2Icon.svelte"
+		},
+		"./24/outline/SquaresPlusIcon.svelte": {
+			"types": "./dist/24/outline/SquaresPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/SquaresPlusIcon.svelte"
+		},
+		"./24/outline/StarIcon.svelte": {
+			"types": "./dist/24/outline/StarIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/StarIcon.svelte"
+		},
+		"./24/outline/StopCircleIcon.svelte": {
+			"types": "./dist/24/outline/StopCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/StopCircleIcon.svelte"
+		},
+		"./24/outline/StopIcon.svelte": {
+			"types": "./dist/24/outline/StopIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/StopIcon.svelte"
+		},
+		"./24/outline/SunIcon.svelte": {
+			"types": "./dist/24/outline/SunIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/SunIcon.svelte"
+		},
+		"./24/outline/SwatchIcon.svelte": {
+			"types": "./dist/24/outline/SwatchIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/SwatchIcon.svelte"
+		},
+		"./24/outline/TableCellsIcon.svelte": {
+			"types": "./dist/24/outline/TableCellsIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/TableCellsIcon.svelte"
+		},
+		"./24/outline/TagIcon.svelte": {
+			"types": "./dist/24/outline/TagIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/TagIcon.svelte"
+		},
+		"./24/outline/TicketIcon.svelte": {
+			"types": "./dist/24/outline/TicketIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/TicketIcon.svelte"
+		},
+		"./24/outline/TrashIcon.svelte": {
+			"types": "./dist/24/outline/TrashIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/TrashIcon.svelte"
+		},
+		"./24/outline/TrophyIcon.svelte": {
+			"types": "./dist/24/outline/TrophyIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/TrophyIcon.svelte"
+		},
+		"./24/outline/TruckIcon.svelte": {
+			"types": "./dist/24/outline/TruckIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/TruckIcon.svelte"
+		},
+		"./24/outline/TvIcon.svelte": {
+			"types": "./dist/24/outline/TvIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/TvIcon.svelte"
+		},
+		"./24/outline/UserCircleIcon.svelte": {
+			"types": "./dist/24/outline/UserCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/UserCircleIcon.svelte"
+		},
+		"./24/outline/UserGroupIcon.svelte": {
+			"types": "./dist/24/outline/UserGroupIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/UserGroupIcon.svelte"
+		},
+		"./24/outline/UserMinusIcon.svelte": {
+			"types": "./dist/24/outline/UserMinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/UserMinusIcon.svelte"
+		},
+		"./24/outline/UserPlusIcon.svelte": {
+			"types": "./dist/24/outline/UserPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/UserPlusIcon.svelte"
+		},
+		"./24/outline/UserIcon.svelte": {
+			"types": "./dist/24/outline/UserIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/UserIcon.svelte"
+		},
+		"./24/outline/UsersIcon.svelte": {
+			"types": "./dist/24/outline/UsersIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/UsersIcon.svelte"
+		},
+		"./24/outline/VariableIcon.svelte": {
+			"types": "./dist/24/outline/VariableIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/VariableIcon.svelte"
+		},
+		"./24/outline/VideoCameraSlashIcon.svelte": {
+			"types": "./dist/24/outline/VideoCameraSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/VideoCameraSlashIcon.svelte"
+		},
+		"./24/outline/VideoCameraIcon.svelte": {
+			"types": "./dist/24/outline/VideoCameraIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/VideoCameraIcon.svelte"
+		},
+		"./24/outline/ViewColumnsIcon.svelte": {
+			"types": "./dist/24/outline/ViewColumnsIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ViewColumnsIcon.svelte"
+		},
+		"./24/outline/ViewfinderCircleIcon.svelte": {
+			"types": "./dist/24/outline/ViewfinderCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/ViewfinderCircleIcon.svelte"
+		},
+		"./24/outline/WalletIcon.svelte": {
+			"types": "./dist/24/outline/WalletIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/WalletIcon.svelte"
+		},
+		"./24/outline/WifiIcon.svelte": {
+			"types": "./dist/24/outline/WifiIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/WifiIcon.svelte"
+		},
+		"./24/outline/WindowIcon.svelte": {
+			"types": "./dist/24/outline/WindowIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/WindowIcon.svelte"
+		},
+		"./24/outline/WrenchScrewdriverIcon.svelte": {
+			"types": "./dist/24/outline/WrenchScrewdriverIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/WrenchScrewdriverIcon.svelte"
+		},
+		"./24/outline/WrenchIcon.svelte": {
+			"types": "./dist/24/outline/WrenchIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/WrenchIcon.svelte"
+		},
+		"./24/outline/XCircleIcon.svelte": {
+			"types": "./dist/24/outline/XCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/XCircleIcon.svelte"
+		},
+		"./24/outline/XMarkIcon.svelte": {
+			"types": "./dist/24/outline/XMarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/outline/XMarkIcon.svelte"
+		},
+		"./24/solid/index.js": {
+			"types": "./dist/24/solid/index.d.ts",
+			"svelte": "./dist/24/solid/index.js"
+		},
+		"./24/solid/AcademicCapIcon.svelte": {
+			"types": "./dist/24/solid/AcademicCapIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/AcademicCapIcon.svelte"
+		},
+		"./24/solid/AdjustmentsHorizontalIcon.svelte": {
+			"types": "./dist/24/solid/AdjustmentsHorizontalIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/AdjustmentsHorizontalIcon.svelte"
+		},
+		"./24/solid/AdjustmentsVerticalIcon.svelte": {
+			"types": "./dist/24/solid/AdjustmentsVerticalIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/AdjustmentsVerticalIcon.svelte"
+		},
+		"./24/solid/ArchiveBoxArrowDownIcon.svelte": {
+			"types": "./dist/24/solid/ArchiveBoxArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArchiveBoxArrowDownIcon.svelte"
+		},
+		"./24/solid/ArchiveBoxXMarkIcon.svelte": {
+			"types": "./dist/24/solid/ArchiveBoxXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArchiveBoxXMarkIcon.svelte"
+		},
+		"./24/solid/ArchiveBoxIcon.svelte": {
+			"types": "./dist/24/solid/ArchiveBoxIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArchiveBoxIcon.svelte"
+		},
+		"./24/solid/ArrowDownCircleIcon.svelte": {
+			"types": "./dist/24/solid/ArrowDownCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowDownCircleIcon.svelte"
+		},
+		"./24/solid/ArrowDownLeftIcon.svelte": {
+			"types": "./dist/24/solid/ArrowDownLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowDownLeftIcon.svelte"
+		},
+		"./24/solid/ArrowDownOnSquareStackIcon.svelte": {
+			"types": "./dist/24/solid/ArrowDownOnSquareStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowDownOnSquareStackIcon.svelte"
+		},
+		"./24/solid/ArrowDownOnSquareIcon.svelte": {
+			"types": "./dist/24/solid/ArrowDownOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowDownOnSquareIcon.svelte"
+		},
+		"./24/solid/ArrowDownRightIcon.svelte": {
+			"types": "./dist/24/solid/ArrowDownRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowDownRightIcon.svelte"
+		},
+		"./24/solid/ArrowDownTrayIcon.svelte": {
+			"types": "./dist/24/solid/ArrowDownTrayIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowDownTrayIcon.svelte"
+		},
+		"./24/solid/ArrowDownIcon.svelte": {
+			"types": "./dist/24/solid/ArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowDownIcon.svelte"
+		},
+		"./24/solid/ArrowLeftCircleIcon.svelte": {
+			"types": "./dist/24/solid/ArrowLeftCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowLeftCircleIcon.svelte"
+		},
+		"./24/solid/ArrowLeftOnRectangleIcon.svelte": {
+			"types": "./dist/24/solid/ArrowLeftOnRectangleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowLeftOnRectangleIcon.svelte"
+		},
+		"./24/solid/ArrowLeftIcon.svelte": {
+			"types": "./dist/24/solid/ArrowLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowLeftIcon.svelte"
+		},
+		"./24/solid/ArrowLongDownIcon.svelte": {
+			"types": "./dist/24/solid/ArrowLongDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowLongDownIcon.svelte"
+		},
+		"./24/solid/ArrowLongLeftIcon.svelte": {
+			"types": "./dist/24/solid/ArrowLongLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowLongLeftIcon.svelte"
+		},
+		"./24/solid/ArrowLongRightIcon.svelte": {
+			"types": "./dist/24/solid/ArrowLongRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowLongRightIcon.svelte"
+		},
+		"./24/solid/ArrowLongUpIcon.svelte": {
+			"types": "./dist/24/solid/ArrowLongUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowLongUpIcon.svelte"
+		},
+		"./24/solid/ArrowPathRoundedSquareIcon.svelte": {
+			"types": "./dist/24/solid/ArrowPathRoundedSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowPathRoundedSquareIcon.svelte"
+		},
+		"./24/solid/ArrowPathIcon.svelte": {
+			"types": "./dist/24/solid/ArrowPathIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowPathIcon.svelte"
+		},
+		"./24/solid/ArrowRightCircleIcon.svelte": {
+			"types": "./dist/24/solid/ArrowRightCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowRightCircleIcon.svelte"
+		},
+		"./24/solid/ArrowRightOnRectangleIcon.svelte": {
+			"types": "./dist/24/solid/ArrowRightOnRectangleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowRightOnRectangleIcon.svelte"
+		},
+		"./24/solid/ArrowRightIcon.svelte": {
+			"types": "./dist/24/solid/ArrowRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowRightIcon.svelte"
+		},
+		"./24/solid/ArrowSmallDownIcon.svelte": {
+			"types": "./dist/24/solid/ArrowSmallDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowSmallDownIcon.svelte"
+		},
+		"./24/solid/ArrowSmallLeftIcon.svelte": {
+			"types": "./dist/24/solid/ArrowSmallLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowSmallLeftIcon.svelte"
+		},
+		"./24/solid/ArrowSmallRightIcon.svelte": {
+			"types": "./dist/24/solid/ArrowSmallRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowSmallRightIcon.svelte"
+		},
+		"./24/solid/ArrowSmallUpIcon.svelte": {
+			"types": "./dist/24/solid/ArrowSmallUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowSmallUpIcon.svelte"
+		},
+		"./24/solid/ArrowTopRightOnSquareIcon.svelte": {
+			"types": "./dist/24/solid/ArrowTopRightOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowTopRightOnSquareIcon.svelte"
+		},
+		"./24/solid/ArrowTrendingDownIcon.svelte": {
+			"types": "./dist/24/solid/ArrowTrendingDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowTrendingDownIcon.svelte"
+		},
+		"./24/solid/ArrowTrendingUpIcon.svelte": {
+			"types": "./dist/24/solid/ArrowTrendingUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowTrendingUpIcon.svelte"
+		},
+		"./24/solid/ArrowUpCircleIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUpCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUpCircleIcon.svelte"
+		},
+		"./24/solid/ArrowUpLeftIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUpLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUpLeftIcon.svelte"
+		},
+		"./24/solid/ArrowUpOnSquareStackIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUpOnSquareStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUpOnSquareStackIcon.svelte"
+		},
+		"./24/solid/ArrowUpOnSquareIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUpOnSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUpOnSquareIcon.svelte"
+		},
+		"./24/solid/ArrowUpRightIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUpRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUpRightIcon.svelte"
+		},
+		"./24/solid/ArrowUpTrayIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUpTrayIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUpTrayIcon.svelte"
+		},
+		"./24/solid/ArrowUpIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUpIcon.svelte"
+		},
+		"./24/solid/ArrowUturnDownIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUturnDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUturnDownIcon.svelte"
+		},
+		"./24/solid/ArrowUturnLeftIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUturnLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUturnLeftIcon.svelte"
+		},
+		"./24/solid/ArrowUturnRightIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUturnRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUturnRightIcon.svelte"
+		},
+		"./24/solid/ArrowUturnUpIcon.svelte": {
+			"types": "./dist/24/solid/ArrowUturnUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowUturnUpIcon.svelte"
+		},
+		"./24/solid/ArrowsPointingInIcon.svelte": {
+			"types": "./dist/24/solid/ArrowsPointingInIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowsPointingInIcon.svelte"
+		},
+		"./24/solid/ArrowsPointingOutIcon.svelte": {
+			"types": "./dist/24/solid/ArrowsPointingOutIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowsPointingOutIcon.svelte"
+		},
+		"./24/solid/ArrowsRightLeftIcon.svelte": {
+			"types": "./dist/24/solid/ArrowsRightLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowsRightLeftIcon.svelte"
+		},
+		"./24/solid/ArrowsUpDownIcon.svelte": {
+			"types": "./dist/24/solid/ArrowsUpDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ArrowsUpDownIcon.svelte"
+		},
+		"./24/solid/AtSymbolIcon.svelte": {
+			"types": "./dist/24/solid/AtSymbolIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/AtSymbolIcon.svelte"
+		},
+		"./24/solid/BackspaceIcon.svelte": {
+			"types": "./dist/24/solid/BackspaceIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BackspaceIcon.svelte"
+		},
+		"./24/solid/BackwardIcon.svelte": {
+			"types": "./dist/24/solid/BackwardIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BackwardIcon.svelte"
+		},
+		"./24/solid/BanknotesIcon.svelte": {
+			"types": "./dist/24/solid/BanknotesIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BanknotesIcon.svelte"
+		},
+		"./24/solid/Bars2Icon.svelte": {
+			"types": "./dist/24/solid/Bars2Icon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Bars2Icon.svelte"
+		},
+		"./24/solid/Bars3BottomLeftIcon.svelte": {
+			"types": "./dist/24/solid/Bars3BottomLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Bars3BottomLeftIcon.svelte"
+		},
+		"./24/solid/Bars3BottomRightIcon.svelte": {
+			"types": "./dist/24/solid/Bars3BottomRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Bars3BottomRightIcon.svelte"
+		},
+		"./24/solid/Bars3CenterLeftIcon.svelte": {
+			"types": "./dist/24/solid/Bars3CenterLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Bars3CenterLeftIcon.svelte"
+		},
+		"./24/solid/Bars3Icon.svelte": {
+			"types": "./dist/24/solid/Bars3Icon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Bars3Icon.svelte"
+		},
+		"./24/solid/Bars4Icon.svelte": {
+			"types": "./dist/24/solid/Bars4Icon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Bars4Icon.svelte"
+		},
+		"./24/solid/BarsArrowDownIcon.svelte": {
+			"types": "./dist/24/solid/BarsArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BarsArrowDownIcon.svelte"
+		},
+		"./24/solid/BarsArrowUpIcon.svelte": {
+			"types": "./dist/24/solid/BarsArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BarsArrowUpIcon.svelte"
+		},
+		"./24/solid/Battery0Icon.svelte": {
+			"types": "./dist/24/solid/Battery0Icon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Battery0Icon.svelte"
+		},
+		"./24/solid/Battery100Icon.svelte": {
+			"types": "./dist/24/solid/Battery100Icon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Battery100Icon.svelte"
+		},
+		"./24/solid/Battery50Icon.svelte": {
+			"types": "./dist/24/solid/Battery50Icon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Battery50Icon.svelte"
+		},
+		"./24/solid/BeakerIcon.svelte": {
+			"types": "./dist/24/solid/BeakerIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BeakerIcon.svelte"
+		},
+		"./24/solid/BellAlertIcon.svelte": {
+			"types": "./dist/24/solid/BellAlertIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BellAlertIcon.svelte"
+		},
+		"./24/solid/BellSlashIcon.svelte": {
+			"types": "./dist/24/solid/BellSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BellSlashIcon.svelte"
+		},
+		"./24/solid/BellSnoozeIcon.svelte": {
+			"types": "./dist/24/solid/BellSnoozeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BellSnoozeIcon.svelte"
+		},
+		"./24/solid/BellIcon.svelte": {
+			"types": "./dist/24/solid/BellIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BellIcon.svelte"
+		},
+		"./24/solid/BoltSlashIcon.svelte": {
+			"types": "./dist/24/solid/BoltSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BoltSlashIcon.svelte"
+		},
+		"./24/solid/BoltIcon.svelte": {
+			"types": "./dist/24/solid/BoltIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BoltIcon.svelte"
+		},
+		"./24/solid/BookOpenIcon.svelte": {
+			"types": "./dist/24/solid/BookOpenIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BookOpenIcon.svelte"
+		},
+		"./24/solid/BookmarkSlashIcon.svelte": {
+			"types": "./dist/24/solid/BookmarkSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BookmarkSlashIcon.svelte"
+		},
+		"./24/solid/BookmarkSquareIcon.svelte": {
+			"types": "./dist/24/solid/BookmarkSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BookmarkSquareIcon.svelte"
+		},
+		"./24/solid/BookmarkIcon.svelte": {
+			"types": "./dist/24/solid/BookmarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BookmarkIcon.svelte"
+		},
+		"./24/solid/BriefcaseIcon.svelte": {
+			"types": "./dist/24/solid/BriefcaseIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BriefcaseIcon.svelte"
+		},
+		"./24/solid/BugAntIcon.svelte": {
+			"types": "./dist/24/solid/BugAntIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BugAntIcon.svelte"
+		},
+		"./24/solid/BuildingLibraryIcon.svelte": {
+			"types": "./dist/24/solid/BuildingLibraryIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BuildingLibraryIcon.svelte"
+		},
+		"./24/solid/BuildingOffice2Icon.svelte": {
+			"types": "./dist/24/solid/BuildingOffice2Icon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BuildingOffice2Icon.svelte"
+		},
+		"./24/solid/BuildingOfficeIcon.svelte": {
+			"types": "./dist/24/solid/BuildingOfficeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BuildingOfficeIcon.svelte"
+		},
+		"./24/solid/BuildingStorefrontIcon.svelte": {
+			"types": "./dist/24/solid/BuildingStorefrontIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/BuildingStorefrontIcon.svelte"
+		},
+		"./24/solid/CakeIcon.svelte": {
+			"types": "./dist/24/solid/CakeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CakeIcon.svelte"
+		},
+		"./24/solid/CalculatorIcon.svelte": {
+			"types": "./dist/24/solid/CalculatorIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CalculatorIcon.svelte"
+		},
+		"./24/solid/CalendarDaysIcon.svelte": {
+			"types": "./dist/24/solid/CalendarDaysIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CalendarDaysIcon.svelte"
+		},
+		"./24/solid/CalendarIcon.svelte": {
+			"types": "./dist/24/solid/CalendarIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CalendarIcon.svelte"
+		},
+		"./24/solid/CameraIcon.svelte": {
+			"types": "./dist/24/solid/CameraIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CameraIcon.svelte"
+		},
+		"./24/solid/ChartBarSquareIcon.svelte": {
+			"types": "./dist/24/solid/ChartBarSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChartBarSquareIcon.svelte"
+		},
+		"./24/solid/ChartBarIcon.svelte": {
+			"types": "./dist/24/solid/ChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChartBarIcon.svelte"
+		},
+		"./24/solid/ChartPieIcon.svelte": {
+			"types": "./dist/24/solid/ChartPieIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChartPieIcon.svelte"
+		},
+		"./24/solid/ChatBubbleBottomCenterTextIcon.svelte": {
+			"types": "./dist/24/solid/ChatBubbleBottomCenterTextIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChatBubbleBottomCenterTextIcon.svelte"
+		},
+		"./24/solid/ChatBubbleBottomCenterIcon.svelte": {
+			"types": "./dist/24/solid/ChatBubbleBottomCenterIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChatBubbleBottomCenterIcon.svelte"
+		},
+		"./24/solid/ChatBubbleLeftEllipsisIcon.svelte": {
+			"types": "./dist/24/solid/ChatBubbleLeftEllipsisIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChatBubbleLeftEllipsisIcon.svelte"
+		},
+		"./24/solid/ChatBubbleLeftRightIcon.svelte": {
+			"types": "./dist/24/solid/ChatBubbleLeftRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChatBubbleLeftRightIcon.svelte"
+		},
+		"./24/solid/ChatBubbleLeftIcon.svelte": {
+			"types": "./dist/24/solid/ChatBubbleLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChatBubbleLeftIcon.svelte"
+		},
+		"./24/solid/ChatBubbleOvalLeftEllipsisIcon.svelte": {
+			"types": "./dist/24/solid/ChatBubbleOvalLeftEllipsisIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChatBubbleOvalLeftEllipsisIcon.svelte"
+		},
+		"./24/solid/ChatBubbleOvalLeftIcon.svelte": {
+			"types": "./dist/24/solid/ChatBubbleOvalLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChatBubbleOvalLeftIcon.svelte"
+		},
+		"./24/solid/CheckBadgeIcon.svelte": {
+			"types": "./dist/24/solid/CheckBadgeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CheckBadgeIcon.svelte"
+		},
+		"./24/solid/CheckCircleIcon.svelte": {
+			"types": "./dist/24/solid/CheckCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CheckCircleIcon.svelte"
+		},
+		"./24/solid/CheckIcon.svelte": {
+			"types": "./dist/24/solid/CheckIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CheckIcon.svelte"
+		},
+		"./24/solid/ChevronDoubleDownIcon.svelte": {
+			"types": "./dist/24/solid/ChevronDoubleDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronDoubleDownIcon.svelte"
+		},
+		"./24/solid/ChevronDoubleLeftIcon.svelte": {
+			"types": "./dist/24/solid/ChevronDoubleLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronDoubleLeftIcon.svelte"
+		},
+		"./24/solid/ChevronDoubleRightIcon.svelte": {
+			"types": "./dist/24/solid/ChevronDoubleRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronDoubleRightIcon.svelte"
+		},
+		"./24/solid/ChevronDoubleUpIcon.svelte": {
+			"types": "./dist/24/solid/ChevronDoubleUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronDoubleUpIcon.svelte"
+		},
+		"./24/solid/ChevronDownIcon.svelte": {
+			"types": "./dist/24/solid/ChevronDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronDownIcon.svelte"
+		},
+		"./24/solid/ChevronLeftIcon.svelte": {
+			"types": "./dist/24/solid/ChevronLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronLeftIcon.svelte"
+		},
+		"./24/solid/ChevronRightIcon.svelte": {
+			"types": "./dist/24/solid/ChevronRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronRightIcon.svelte"
+		},
+		"./24/solid/ChevronUpDownIcon.svelte": {
+			"types": "./dist/24/solid/ChevronUpDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronUpDownIcon.svelte"
+		},
+		"./24/solid/ChevronUpIcon.svelte": {
+			"types": "./dist/24/solid/ChevronUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ChevronUpIcon.svelte"
+		},
+		"./24/solid/CircleStackIcon.svelte": {
+			"types": "./dist/24/solid/CircleStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CircleStackIcon.svelte"
+		},
+		"./24/solid/ClipboardDocumentCheckIcon.svelte": {
+			"types": "./dist/24/solid/ClipboardDocumentCheckIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ClipboardDocumentCheckIcon.svelte"
+		},
+		"./24/solid/ClipboardDocumentListIcon.svelte": {
+			"types": "./dist/24/solid/ClipboardDocumentListIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ClipboardDocumentListIcon.svelte"
+		},
+		"./24/solid/ClipboardDocumentIcon.svelte": {
+			"types": "./dist/24/solid/ClipboardDocumentIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ClipboardDocumentIcon.svelte"
+		},
+		"./24/solid/ClipboardIcon.svelte": {
+			"types": "./dist/24/solid/ClipboardIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ClipboardIcon.svelte"
+		},
+		"./24/solid/ClockIcon.svelte": {
+			"types": "./dist/24/solid/ClockIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ClockIcon.svelte"
+		},
+		"./24/solid/CloudArrowDownIcon.svelte": {
+			"types": "./dist/24/solid/CloudArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CloudArrowDownIcon.svelte"
+		},
+		"./24/solid/CloudArrowUpIcon.svelte": {
+			"types": "./dist/24/solid/CloudArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CloudArrowUpIcon.svelte"
+		},
+		"./24/solid/CloudIcon.svelte": {
+			"types": "./dist/24/solid/CloudIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CloudIcon.svelte"
+		},
+		"./24/solid/CodeBracketSquareIcon.svelte": {
+			"types": "./dist/24/solid/CodeBracketSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CodeBracketSquareIcon.svelte"
+		},
+		"./24/solid/CodeBracketIcon.svelte": {
+			"types": "./dist/24/solid/CodeBracketIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CodeBracketIcon.svelte"
+		},
+		"./24/solid/Cog6ToothIcon.svelte": {
+			"types": "./dist/24/solid/Cog6ToothIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Cog6ToothIcon.svelte"
+		},
+		"./24/solid/Cog8ToothIcon.svelte": {
+			"types": "./dist/24/solid/Cog8ToothIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Cog8ToothIcon.svelte"
+		},
+		"./24/solid/CogIcon.svelte": {
+			"types": "./dist/24/solid/CogIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CogIcon.svelte"
+		},
+		"./24/solid/CommandLineIcon.svelte": {
+			"types": "./dist/24/solid/CommandLineIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CommandLineIcon.svelte"
+		},
+		"./24/solid/ComputerDesktopIcon.svelte": {
+			"types": "./dist/24/solid/ComputerDesktopIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ComputerDesktopIcon.svelte"
+		},
+		"./24/solid/CpuChipIcon.svelte": {
+			"types": "./dist/24/solid/CpuChipIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CpuChipIcon.svelte"
+		},
+		"./24/solid/CreditCardIcon.svelte": {
+			"types": "./dist/24/solid/CreditCardIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CreditCardIcon.svelte"
+		},
+		"./24/solid/CubeTransparentIcon.svelte": {
+			"types": "./dist/24/solid/CubeTransparentIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CubeTransparentIcon.svelte"
+		},
+		"./24/solid/CubeIcon.svelte": {
+			"types": "./dist/24/solid/CubeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CubeIcon.svelte"
+		},
+		"./24/solid/CurrencyBangladeshiIcon.svelte": {
+			"types": "./dist/24/solid/CurrencyBangladeshiIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CurrencyBangladeshiIcon.svelte"
+		},
+		"./24/solid/CurrencyDollarIcon.svelte": {
+			"types": "./dist/24/solid/CurrencyDollarIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CurrencyDollarIcon.svelte"
+		},
+		"./24/solid/CurrencyEuroIcon.svelte": {
+			"types": "./dist/24/solid/CurrencyEuroIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CurrencyEuroIcon.svelte"
+		},
+		"./24/solid/CurrencyPoundIcon.svelte": {
+			"types": "./dist/24/solid/CurrencyPoundIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CurrencyPoundIcon.svelte"
+		},
+		"./24/solid/CurrencyRupeeIcon.svelte": {
+			"types": "./dist/24/solid/CurrencyRupeeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CurrencyRupeeIcon.svelte"
+		},
+		"./24/solid/CurrencyYenIcon.svelte": {
+			"types": "./dist/24/solid/CurrencyYenIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CurrencyYenIcon.svelte"
+		},
+		"./24/solid/CursorArrowRaysIcon.svelte": {
+			"types": "./dist/24/solid/CursorArrowRaysIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CursorArrowRaysIcon.svelte"
+		},
+		"./24/solid/CursorArrowRippleIcon.svelte": {
+			"types": "./dist/24/solid/CursorArrowRippleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/CursorArrowRippleIcon.svelte"
+		},
+		"./24/solid/DevicePhoneMobileIcon.svelte": {
+			"types": "./dist/24/solid/DevicePhoneMobileIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DevicePhoneMobileIcon.svelte"
+		},
+		"./24/solid/DeviceTabletIcon.svelte": {
+			"types": "./dist/24/solid/DeviceTabletIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DeviceTabletIcon.svelte"
+		},
+		"./24/solid/DocumentArrowDownIcon.svelte": {
+			"types": "./dist/24/solid/DocumentArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentArrowDownIcon.svelte"
+		},
+		"./24/solid/DocumentArrowUpIcon.svelte": {
+			"types": "./dist/24/solid/DocumentArrowUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentArrowUpIcon.svelte"
+		},
+		"./24/solid/DocumentChartBarIcon.svelte": {
+			"types": "./dist/24/solid/DocumentChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentChartBarIcon.svelte"
+		},
+		"./24/solid/DocumentCheckIcon.svelte": {
+			"types": "./dist/24/solid/DocumentCheckIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentCheckIcon.svelte"
+		},
+		"./24/solid/DocumentDuplicateIcon.svelte": {
+			"types": "./dist/24/solid/DocumentDuplicateIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentDuplicateIcon.svelte"
+		},
+		"./24/solid/DocumentMagnifyingGlassIcon.svelte": {
+			"types": "./dist/24/solid/DocumentMagnifyingGlassIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentMagnifyingGlassIcon.svelte"
+		},
+		"./24/solid/DocumentMinusIcon.svelte": {
+			"types": "./dist/24/solid/DocumentMinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentMinusIcon.svelte"
+		},
+		"./24/solid/DocumentPlusIcon.svelte": {
+			"types": "./dist/24/solid/DocumentPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentPlusIcon.svelte"
+		},
+		"./24/solid/DocumentTextIcon.svelte": {
+			"types": "./dist/24/solid/DocumentTextIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentTextIcon.svelte"
+		},
+		"./24/solid/DocumentIcon.svelte": {
+			"types": "./dist/24/solid/DocumentIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/DocumentIcon.svelte"
+		},
+		"./24/solid/EllipsisHorizontalCircleIcon.svelte": {
+			"types": "./dist/24/solid/EllipsisHorizontalCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/EllipsisHorizontalCircleIcon.svelte"
+		},
+		"./24/solid/EllipsisHorizontalIcon.svelte": {
+			"types": "./dist/24/solid/EllipsisHorizontalIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/EllipsisHorizontalIcon.svelte"
+		},
+		"./24/solid/EllipsisVerticalIcon.svelte": {
+			"types": "./dist/24/solid/EllipsisVerticalIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/EllipsisVerticalIcon.svelte"
+		},
+		"./24/solid/EnvelopeOpenIcon.svelte": {
+			"types": "./dist/24/solid/EnvelopeOpenIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/EnvelopeOpenIcon.svelte"
+		},
+		"./24/solid/EnvelopeIcon.svelte": {
+			"types": "./dist/24/solid/EnvelopeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/EnvelopeIcon.svelte"
+		},
+		"./24/solid/ExclamationCircleIcon.svelte": {
+			"types": "./dist/24/solid/ExclamationCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ExclamationCircleIcon.svelte"
+		},
+		"./24/solid/ExclamationTriangleIcon.svelte": {
+			"types": "./dist/24/solid/ExclamationTriangleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ExclamationTriangleIcon.svelte"
+		},
+		"./24/solid/EyeDropperIcon.svelte": {
+			"types": "./dist/24/solid/EyeDropperIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/EyeDropperIcon.svelte"
+		},
+		"./24/solid/EyeSlashIcon.svelte": {
+			"types": "./dist/24/solid/EyeSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/EyeSlashIcon.svelte"
+		},
+		"./24/solid/EyeIcon.svelte": {
+			"types": "./dist/24/solid/EyeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/EyeIcon.svelte"
+		},
+		"./24/solid/FaceFrownIcon.svelte": {
+			"types": "./dist/24/solid/FaceFrownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FaceFrownIcon.svelte"
+		},
+		"./24/solid/FaceSmileIcon.svelte": {
+			"types": "./dist/24/solid/FaceSmileIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FaceSmileIcon.svelte"
+		},
+		"./24/solid/FilmIcon.svelte": {
+			"types": "./dist/24/solid/FilmIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FilmIcon.svelte"
+		},
+		"./24/solid/FingerPrintIcon.svelte": {
+			"types": "./dist/24/solid/FingerPrintIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FingerPrintIcon.svelte"
+		},
+		"./24/solid/FireIcon.svelte": {
+			"types": "./dist/24/solid/FireIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FireIcon.svelte"
+		},
+		"./24/solid/FlagIcon.svelte": {
+			"types": "./dist/24/solid/FlagIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FlagIcon.svelte"
+		},
+		"./24/solid/FolderArrowDownIcon.svelte": {
+			"types": "./dist/24/solid/FolderArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FolderArrowDownIcon.svelte"
+		},
+		"./24/solid/FolderMinusIcon.svelte": {
+			"types": "./dist/24/solid/FolderMinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FolderMinusIcon.svelte"
+		},
+		"./24/solid/FolderOpenIcon.svelte": {
+			"types": "./dist/24/solid/FolderOpenIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FolderOpenIcon.svelte"
+		},
+		"./24/solid/FolderPlusIcon.svelte": {
+			"types": "./dist/24/solid/FolderPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FolderPlusIcon.svelte"
+		},
+		"./24/solid/FolderIcon.svelte": {
+			"types": "./dist/24/solid/FolderIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FolderIcon.svelte"
+		},
+		"./24/solid/ForwardIcon.svelte": {
+			"types": "./dist/24/solid/ForwardIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ForwardIcon.svelte"
+		},
+		"./24/solid/FunnelIcon.svelte": {
+			"types": "./dist/24/solid/FunnelIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/FunnelIcon.svelte"
+		},
+		"./24/solid/GifIcon.svelte": {
+			"types": "./dist/24/solid/GifIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/GifIcon.svelte"
+		},
+		"./24/solid/GiftTopIcon.svelte": {
+			"types": "./dist/24/solid/GiftTopIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/GiftTopIcon.svelte"
+		},
+		"./24/solid/GiftIcon.svelte": {
+			"types": "./dist/24/solid/GiftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/GiftIcon.svelte"
+		},
+		"./24/solid/GlobeAltIcon.svelte": {
+			"types": "./dist/24/solid/GlobeAltIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/GlobeAltIcon.svelte"
+		},
+		"./24/solid/GlobeAmericasIcon.svelte": {
+			"types": "./dist/24/solid/GlobeAmericasIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/GlobeAmericasIcon.svelte"
+		},
+		"./24/solid/GlobeAsiaAustraliaIcon.svelte": {
+			"types": "./dist/24/solid/GlobeAsiaAustraliaIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/GlobeAsiaAustraliaIcon.svelte"
+		},
+		"./24/solid/GlobeEuropeAfricaIcon.svelte": {
+			"types": "./dist/24/solid/GlobeEuropeAfricaIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/GlobeEuropeAfricaIcon.svelte"
+		},
+		"./24/solid/HandRaisedIcon.svelte": {
+			"types": "./dist/24/solid/HandRaisedIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/HandRaisedIcon.svelte"
+		},
+		"./24/solid/HandThumbDownIcon.svelte": {
+			"types": "./dist/24/solid/HandThumbDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/HandThumbDownIcon.svelte"
+		},
+		"./24/solid/HandThumbUpIcon.svelte": {
+			"types": "./dist/24/solid/HandThumbUpIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/HandThumbUpIcon.svelte"
+		},
+		"./24/solid/HashtagIcon.svelte": {
+			"types": "./dist/24/solid/HashtagIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/HashtagIcon.svelte"
+		},
+		"./24/solid/HeartIcon.svelte": {
+			"types": "./dist/24/solid/HeartIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/HeartIcon.svelte"
+		},
+		"./24/solid/HomeModernIcon.svelte": {
+			"types": "./dist/24/solid/HomeModernIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/HomeModernIcon.svelte"
+		},
+		"./24/solid/HomeIcon.svelte": {
+			"types": "./dist/24/solid/HomeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/HomeIcon.svelte"
+		},
+		"./24/solid/IdentificationIcon.svelte": {
+			"types": "./dist/24/solid/IdentificationIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/IdentificationIcon.svelte"
+		},
+		"./24/solid/InboxArrowDownIcon.svelte": {
+			"types": "./dist/24/solid/InboxArrowDownIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/InboxArrowDownIcon.svelte"
+		},
+		"./24/solid/InboxStackIcon.svelte": {
+			"types": "./dist/24/solid/InboxStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/InboxStackIcon.svelte"
+		},
+		"./24/solid/InboxIcon.svelte": {
+			"types": "./dist/24/solid/InboxIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/InboxIcon.svelte"
+		},
+		"./24/solid/InformationCircleIcon.svelte": {
+			"types": "./dist/24/solid/InformationCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/InformationCircleIcon.svelte"
+		},
+		"./24/solid/KeyIcon.svelte": {
+			"types": "./dist/24/solid/KeyIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/KeyIcon.svelte"
+		},
+		"./24/solid/LanguageIcon.svelte": {
+			"types": "./dist/24/solid/LanguageIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/LanguageIcon.svelte"
+		},
+		"./24/solid/LifebuoyIcon.svelte": {
+			"types": "./dist/24/solid/LifebuoyIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/LifebuoyIcon.svelte"
+		},
+		"./24/solid/LightBulbIcon.svelte": {
+			"types": "./dist/24/solid/LightBulbIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/LightBulbIcon.svelte"
+		},
+		"./24/solid/LinkIcon.svelte": {
+			"types": "./dist/24/solid/LinkIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/LinkIcon.svelte"
+		},
+		"./24/solid/ListBulletIcon.svelte": {
+			"types": "./dist/24/solid/ListBulletIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ListBulletIcon.svelte"
+		},
+		"./24/solid/LockClosedIcon.svelte": {
+			"types": "./dist/24/solid/LockClosedIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/LockClosedIcon.svelte"
+		},
+		"./24/solid/LockOpenIcon.svelte": {
+			"types": "./dist/24/solid/LockOpenIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/LockOpenIcon.svelte"
+		},
+		"./24/solid/MagnifyingGlassCircleIcon.svelte": {
+			"types": "./dist/24/solid/MagnifyingGlassCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MagnifyingGlassCircleIcon.svelte"
+		},
+		"./24/solid/MagnifyingGlassMinusIcon.svelte": {
+			"types": "./dist/24/solid/MagnifyingGlassMinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MagnifyingGlassMinusIcon.svelte"
+		},
+		"./24/solid/MagnifyingGlassPlusIcon.svelte": {
+			"types": "./dist/24/solid/MagnifyingGlassPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MagnifyingGlassPlusIcon.svelte"
+		},
+		"./24/solid/MagnifyingGlassIcon.svelte": {
+			"types": "./dist/24/solid/MagnifyingGlassIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MagnifyingGlassIcon.svelte"
+		},
+		"./24/solid/MapPinIcon.svelte": {
+			"types": "./dist/24/solid/MapPinIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MapPinIcon.svelte"
+		},
+		"./24/solid/MapIcon.svelte": {
+			"types": "./dist/24/solid/MapIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MapIcon.svelte"
+		},
+		"./24/solid/MegaphoneIcon.svelte": {
+			"types": "./dist/24/solid/MegaphoneIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MegaphoneIcon.svelte"
+		},
+		"./24/solid/MicrophoneIcon.svelte": {
+			"types": "./dist/24/solid/MicrophoneIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MicrophoneIcon.svelte"
+		},
+		"./24/solid/MinusCircleIcon.svelte": {
+			"types": "./dist/24/solid/MinusCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MinusCircleIcon.svelte"
+		},
+		"./24/solid/MinusSmallIcon.svelte": {
+			"types": "./dist/24/solid/MinusSmallIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MinusSmallIcon.svelte"
+		},
+		"./24/solid/MinusIcon.svelte": {
+			"types": "./dist/24/solid/MinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MinusIcon.svelte"
+		},
+		"./24/solid/MoonIcon.svelte": {
+			"types": "./dist/24/solid/MoonIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MoonIcon.svelte"
+		},
+		"./24/solid/MusicalNoteIcon.svelte": {
+			"types": "./dist/24/solid/MusicalNoteIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/MusicalNoteIcon.svelte"
+		},
+		"./24/solid/NewspaperIcon.svelte": {
+			"types": "./dist/24/solid/NewspaperIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/NewspaperIcon.svelte"
+		},
+		"./24/solid/NoSymbolIcon.svelte": {
+			"types": "./dist/24/solid/NoSymbolIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/NoSymbolIcon.svelte"
+		},
+		"./24/solid/PaintBrushIcon.svelte": {
+			"types": "./dist/24/solid/PaintBrushIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PaintBrushIcon.svelte"
+		},
+		"./24/solid/PaperAirplaneIcon.svelte": {
+			"types": "./dist/24/solid/PaperAirplaneIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PaperAirplaneIcon.svelte"
+		},
+		"./24/solid/PaperClipIcon.svelte": {
+			"types": "./dist/24/solid/PaperClipIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PaperClipIcon.svelte"
+		},
+		"./24/solid/PauseCircleIcon.svelte": {
+			"types": "./dist/24/solid/PauseCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PauseCircleIcon.svelte"
+		},
+		"./24/solid/PauseIcon.svelte": {
+			"types": "./dist/24/solid/PauseIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PauseIcon.svelte"
+		},
+		"./24/solid/PencilSquareIcon.svelte": {
+			"types": "./dist/24/solid/PencilSquareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PencilSquareIcon.svelte"
+		},
+		"./24/solid/PencilIcon.svelte": {
+			"types": "./dist/24/solid/PencilIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PencilIcon.svelte"
+		},
+		"./24/solid/PhoneArrowDownLeftIcon.svelte": {
+			"types": "./dist/24/solid/PhoneArrowDownLeftIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PhoneArrowDownLeftIcon.svelte"
+		},
+		"./24/solid/PhoneArrowUpRightIcon.svelte": {
+			"types": "./dist/24/solid/PhoneArrowUpRightIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PhoneArrowUpRightIcon.svelte"
+		},
+		"./24/solid/PhoneXMarkIcon.svelte": {
+			"types": "./dist/24/solid/PhoneXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PhoneXMarkIcon.svelte"
+		},
+		"./24/solid/PhoneIcon.svelte": {
+			"types": "./dist/24/solid/PhoneIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PhoneIcon.svelte"
+		},
+		"./24/solid/PhotoIcon.svelte": {
+			"types": "./dist/24/solid/PhotoIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PhotoIcon.svelte"
+		},
+		"./24/solid/PlayCircleIcon.svelte": {
+			"types": "./dist/24/solid/PlayCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PlayCircleIcon.svelte"
+		},
+		"./24/solid/PlayPauseIcon.svelte": {
+			"types": "./dist/24/solid/PlayPauseIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PlayPauseIcon.svelte"
+		},
+		"./24/solid/PlayIcon.svelte": {
+			"types": "./dist/24/solid/PlayIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PlayIcon.svelte"
+		},
+		"./24/solid/PlusCircleIcon.svelte": {
+			"types": "./dist/24/solid/PlusCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PlusCircleIcon.svelte"
+		},
+		"./24/solid/PlusSmallIcon.svelte": {
+			"types": "./dist/24/solid/PlusSmallIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PlusSmallIcon.svelte"
+		},
+		"./24/solid/PlusIcon.svelte": {
+			"types": "./dist/24/solid/PlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PlusIcon.svelte"
+		},
+		"./24/solid/PowerIcon.svelte": {
+			"types": "./dist/24/solid/PowerIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PowerIcon.svelte"
+		},
+		"./24/solid/PresentationChartBarIcon.svelte": {
+			"types": "./dist/24/solid/PresentationChartBarIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PresentationChartBarIcon.svelte"
+		},
+		"./24/solid/PresentationChartLineIcon.svelte": {
+			"types": "./dist/24/solid/PresentationChartLineIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PresentationChartLineIcon.svelte"
+		},
+		"./24/solid/PrinterIcon.svelte": {
+			"types": "./dist/24/solid/PrinterIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PrinterIcon.svelte"
+		},
+		"./24/solid/PuzzlePieceIcon.svelte": {
+			"types": "./dist/24/solid/PuzzlePieceIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/PuzzlePieceIcon.svelte"
+		},
+		"./24/solid/QrCodeIcon.svelte": {
+			"types": "./dist/24/solid/QrCodeIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/QrCodeIcon.svelte"
+		},
+		"./24/solid/QuestionMarkCircleIcon.svelte": {
+			"types": "./dist/24/solid/QuestionMarkCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/QuestionMarkCircleIcon.svelte"
+		},
+		"./24/solid/QueueListIcon.svelte": {
+			"types": "./dist/24/solid/QueueListIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/QueueListIcon.svelte"
+		},
+		"./24/solid/RadioIcon.svelte": {
+			"types": "./dist/24/solid/RadioIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/RadioIcon.svelte"
+		},
+		"./24/solid/ReceiptPercentIcon.svelte": {
+			"types": "./dist/24/solid/ReceiptPercentIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ReceiptPercentIcon.svelte"
+		},
+		"./24/solid/ReceiptRefundIcon.svelte": {
+			"types": "./dist/24/solid/ReceiptRefundIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ReceiptRefundIcon.svelte"
+		},
+		"./24/solid/RectangleGroupIcon.svelte": {
+			"types": "./dist/24/solid/RectangleGroupIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/RectangleGroupIcon.svelte"
+		},
+		"./24/solid/RectangleStackIcon.svelte": {
+			"types": "./dist/24/solid/RectangleStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/RectangleStackIcon.svelte"
+		},
+		"./24/solid/RocketLaunchIcon.svelte": {
+			"types": "./dist/24/solid/RocketLaunchIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/RocketLaunchIcon.svelte"
+		},
+		"./24/solid/RssIcon.svelte": {
+			"types": "./dist/24/solid/RssIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/RssIcon.svelte"
+		},
+		"./24/solid/ScaleIcon.svelte": {
+			"types": "./dist/24/solid/ScaleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ScaleIcon.svelte"
+		},
+		"./24/solid/ScissorsIcon.svelte": {
+			"types": "./dist/24/solid/ScissorsIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ScissorsIcon.svelte"
+		},
+		"./24/solid/ServerStackIcon.svelte": {
+			"types": "./dist/24/solid/ServerStackIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ServerStackIcon.svelte"
+		},
+		"./24/solid/ServerIcon.svelte": {
+			"types": "./dist/24/solid/ServerIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ServerIcon.svelte"
+		},
+		"./24/solid/ShareIcon.svelte": {
+			"types": "./dist/24/solid/ShareIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ShareIcon.svelte"
+		},
+		"./24/solid/ShieldCheckIcon.svelte": {
+			"types": "./dist/24/solid/ShieldCheckIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ShieldCheckIcon.svelte"
+		},
+		"./24/solid/ShieldExclamationIcon.svelte": {
+			"types": "./dist/24/solid/ShieldExclamationIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ShieldExclamationIcon.svelte"
+		},
+		"./24/solid/ShoppingBagIcon.svelte": {
+			"types": "./dist/24/solid/ShoppingBagIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ShoppingBagIcon.svelte"
+		},
+		"./24/solid/ShoppingCartIcon.svelte": {
+			"types": "./dist/24/solid/ShoppingCartIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ShoppingCartIcon.svelte"
+		},
+		"./24/solid/SignalSlashIcon.svelte": {
+			"types": "./dist/24/solid/SignalSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/SignalSlashIcon.svelte"
+		},
+		"./24/solid/SignalIcon.svelte": {
+			"types": "./dist/24/solid/SignalIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/SignalIcon.svelte"
+		},
+		"./24/solid/SparklesIcon.svelte": {
+			"types": "./dist/24/solid/SparklesIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/SparklesIcon.svelte"
+		},
+		"./24/solid/SpeakerWaveIcon.svelte": {
+			"types": "./dist/24/solid/SpeakerWaveIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/SpeakerWaveIcon.svelte"
+		},
+		"./24/solid/SpeakerXMarkIcon.svelte": {
+			"types": "./dist/24/solid/SpeakerXMarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/SpeakerXMarkIcon.svelte"
+		},
+		"./24/solid/Square2StackIcon.svelte": {
+			"types": "./dist/24/solid/Square2StackIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Square2StackIcon.svelte"
+		},
+		"./24/solid/Square3Stack3DIcon.svelte": {
+			"types": "./dist/24/solid/Square3Stack3DIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Square3Stack3DIcon.svelte"
+		},
+		"./24/solid/Squares2X2Icon.svelte": {
+			"types": "./dist/24/solid/Squares2X2Icon.svelte.d.ts",
+			"svelte": "./dist/24/solid/Squares2X2Icon.svelte"
+		},
+		"./24/solid/SquaresPlusIcon.svelte": {
+			"types": "./dist/24/solid/SquaresPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/SquaresPlusIcon.svelte"
+		},
+		"./24/solid/StarIcon.svelte": {
+			"types": "./dist/24/solid/StarIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/StarIcon.svelte"
+		},
+		"./24/solid/StopCircleIcon.svelte": {
+			"types": "./dist/24/solid/StopCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/StopCircleIcon.svelte"
+		},
+		"./24/solid/StopIcon.svelte": {
+			"types": "./dist/24/solid/StopIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/StopIcon.svelte"
+		},
+		"./24/solid/SunIcon.svelte": {
+			"types": "./dist/24/solid/SunIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/SunIcon.svelte"
+		},
+		"./24/solid/SwatchIcon.svelte": {
+			"types": "./dist/24/solid/SwatchIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/SwatchIcon.svelte"
+		},
+		"./24/solid/TableCellsIcon.svelte": {
+			"types": "./dist/24/solid/TableCellsIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/TableCellsIcon.svelte"
+		},
+		"./24/solid/TagIcon.svelte": {
+			"types": "./dist/24/solid/TagIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/TagIcon.svelte"
+		},
+		"./24/solid/TicketIcon.svelte": {
+			"types": "./dist/24/solid/TicketIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/TicketIcon.svelte"
+		},
+		"./24/solid/TrashIcon.svelte": {
+			"types": "./dist/24/solid/TrashIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/TrashIcon.svelte"
+		},
+		"./24/solid/TrophyIcon.svelte": {
+			"types": "./dist/24/solid/TrophyIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/TrophyIcon.svelte"
+		},
+		"./24/solid/TruckIcon.svelte": {
+			"types": "./dist/24/solid/TruckIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/TruckIcon.svelte"
+		},
+		"./24/solid/TvIcon.svelte": {
+			"types": "./dist/24/solid/TvIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/TvIcon.svelte"
+		},
+		"./24/solid/UserCircleIcon.svelte": {
+			"types": "./dist/24/solid/UserCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/UserCircleIcon.svelte"
+		},
+		"./24/solid/UserGroupIcon.svelte": {
+			"types": "./dist/24/solid/UserGroupIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/UserGroupIcon.svelte"
+		},
+		"./24/solid/UserMinusIcon.svelte": {
+			"types": "./dist/24/solid/UserMinusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/UserMinusIcon.svelte"
+		},
+		"./24/solid/UserPlusIcon.svelte": {
+			"types": "./dist/24/solid/UserPlusIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/UserPlusIcon.svelte"
+		},
+		"./24/solid/UserIcon.svelte": {
+			"types": "./dist/24/solid/UserIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/UserIcon.svelte"
+		},
+		"./24/solid/UsersIcon.svelte": {
+			"types": "./dist/24/solid/UsersIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/UsersIcon.svelte"
+		},
+		"./24/solid/VariableIcon.svelte": {
+			"types": "./dist/24/solid/VariableIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/VariableIcon.svelte"
+		},
+		"./24/solid/VideoCameraSlashIcon.svelte": {
+			"types": "./dist/24/solid/VideoCameraSlashIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/VideoCameraSlashIcon.svelte"
+		},
+		"./24/solid/VideoCameraIcon.svelte": {
+			"types": "./dist/24/solid/VideoCameraIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/VideoCameraIcon.svelte"
+		},
+		"./24/solid/ViewColumnsIcon.svelte": {
+			"types": "./dist/24/solid/ViewColumnsIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ViewColumnsIcon.svelte"
+		},
+		"./24/solid/ViewfinderCircleIcon.svelte": {
+			"types": "./dist/24/solid/ViewfinderCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/ViewfinderCircleIcon.svelte"
+		},
+		"./24/solid/WalletIcon.svelte": {
+			"types": "./dist/24/solid/WalletIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/WalletIcon.svelte"
+		},
+		"./24/solid/WifiIcon.svelte": {
+			"types": "./dist/24/solid/WifiIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/WifiIcon.svelte"
+		},
+		"./24/solid/WindowIcon.svelte": {
+			"types": "./dist/24/solid/WindowIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/WindowIcon.svelte"
+		},
+		"./24/solid/WrenchScrewdriverIcon.svelte": {
+			"types": "./dist/24/solid/WrenchScrewdriverIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/WrenchScrewdriverIcon.svelte"
+		},
+		"./24/solid/WrenchIcon.svelte": {
+			"types": "./dist/24/solid/WrenchIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/WrenchIcon.svelte"
+		},
+		"./24/solid/XCircleIcon.svelte": {
+			"types": "./dist/24/solid/XCircleIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/XCircleIcon.svelte"
+		},
+		"./24/solid/XMarkIcon.svelte": {
+			"types": "./dist/24/solid/XMarkIcon.svelte.d.ts",
+			"svelte": "./dist/24/solid/XMarkIcon.svelte"
+		}
+	}
 }
